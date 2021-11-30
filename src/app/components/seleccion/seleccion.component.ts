@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CrudService } from './../../service/crud.service';
+//import { CrudService } from './../../service/crud.service';
 
 @Component({
   selector: 'app-seleccion',
@@ -8,7 +8,7 @@ import { CrudService } from './../../service/crud.service';
 })
 export class SeleccionComponent implements OnInit {
 
-  constructor(private crudService:CrudService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
