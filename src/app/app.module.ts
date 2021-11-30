@@ -10,8 +10,7 @@ import { AddPerfilComponent } from './components/add-perfil/add-perfil.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material.module';
 import { MatNativeDateModule } from '@angular/material/core';
-
-
+import { SeleccionComponent } from './components/seleccion/seleccion.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MaterialModule,
     FormsModule, 
     ReactiveFormsModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    SeleccionComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
