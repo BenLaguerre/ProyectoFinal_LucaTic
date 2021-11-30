@@ -11,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material.module';
 import { MatNativeDateModule } from '@angular/material/core';
 import { SeleccionComponent } from './components/seleccion/seleccion.component';
+import { DetallePerfilComponent } from './components/detalle-perfil/detalle-perfil.component';
+import { Eror404Component } from './components/eror404/eror404.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LechonesGustadosComponent } from './components/lechones-gustados/lechones-gustados.component';
@@ -21,6 +23,8 @@ import { LechonesGustadosComponent } from './components/lechones-gustados/lechon
     HomeComponent,
     AddPerfilComponent,
     SeleccionComponent,
+    DetallePerfilComponent,
+    Eror404Component,
     HeaderComponent,
     FooterComponent,
     LechonesGustadosComponent
@@ -33,7 +37,7 @@ import { LechonesGustadosComponent } from './components/lechones-gustados/lechon
     MaterialModule,
     FormsModule, 
     ReactiveFormsModule,
-    MatNativeDateModule
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
