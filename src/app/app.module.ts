@@ -11,12 +11,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material.module';
 import { MatNativeDateModule } from '@angular/material/core';
 import { SeleccionComponent } from './components/seleccion/seleccion.component';
+import { DetallePerfilComponent } from './components/detalle-perfil/detalle-perfil.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AddPerfilComponent
+    AddPerfilComponent,
+    SeleccionComponent,
+    DetallePerfilComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,6 @@ import { SeleccionComponent } from './components/seleccion/seleccion.component';
     FormsModule, 
     ReactiveFormsModule,
     MatNativeDateModule,
-    SeleccionComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
