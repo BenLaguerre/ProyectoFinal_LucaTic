@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import {DomSanitizer} from '@angular/platform-browser';
-import {MatIconRegistry} from '@angular/material/icon';
+//import { CrudService } from './../../service/crud.service';
 
 @Component({
   selector: 'app-seleccion',
@@ -14,5 +12,12 @@ export class SeleccionComponent implements OnInit {
 
   ngOnInit(): void {
   }
+/*
+  sin terminar
 
+  like():any{
+    this.crudService.like()
+      .susbcribe()
+  }
+*/
 }

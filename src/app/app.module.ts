@@ -13,6 +13,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { SeleccionComponent } from './components/seleccion/seleccion.component';
 import { DetallePerfilComponent } from './components/detalle-perfil/detalle-perfil.component';
 import { Eror404Component } from './components/eror404/eror404.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LechonesGustadosComponent } from './components/lechones-gustados/lechones-gustados.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { Eror404Component } from './components/eror404/eror404.component';
     AddPerfilComponent,
     SeleccionComponent,
     DetallePerfilComponent,
-    Eror404Component
+    Eror404Component,
+    HeaderComponent,
+    FooterComponent,
+    LechonesGustadosComponent
   ],
   imports: [
     BrowserModule,
