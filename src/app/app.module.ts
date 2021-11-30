@@ -11,13 +11,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material.module';
 import { MatNativeDateModule } from '@angular/material/core';
 import { SeleccionComponent } from './components/seleccion/seleccion.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AddPerfilComponent,
-    SeleccionComponent
+    SeleccionComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
