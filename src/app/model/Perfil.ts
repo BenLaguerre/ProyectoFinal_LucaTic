@@ -8,6 +8,7 @@ export class Perfil {
   private description: String;
   private musicGender: String;
   private arrayLikes: string[];
+  private arrayDislikes: string[];
 
   constructor(
     id: number,
@@ -18,7 +19,8 @@ export class Perfil {
     city: String,
     description: String,
     musicGender: String,
-    arrayLikes: string[]
+    arrayLikes: string[],
+    arrayDislikes: string[]
   ) {
     this.id = id;
     this.email = email;
@@ -29,6 +31,7 @@ export class Perfil {
     this.description = description;
     this.musicGender = musicGender;
     this.arrayLikes = arrayLikes;
+    this.arrayDislikes = arrayDislikes;
   }
 
   public getId(): Number {
@@ -101,5 +104,13 @@ export class Perfil {
 
   public setArrayLikes(arrayLikes: string[]): void {
     this.arrayLikes = arrayLikes;
+  }
+
+  public getArrayDislikes(): string[] {
+    return this.arrayDislikes;
+  }
+
+  public setArrayDislikes(arrayDislikes: string[]): void {
+    this.arrayDislikes = arrayDislikes;
   }
 }

@@ -1,7 +1,10 @@
-span{
-    padding-right: 1em;
+header{
+    display:flex;
+    justify-content:space-between;
+    background-color: rgb(236, 147, 162);
 }
 
-.navbar{
-    justify-content: space-between;
+
+span a{
+    text-decoration: none;
 }
