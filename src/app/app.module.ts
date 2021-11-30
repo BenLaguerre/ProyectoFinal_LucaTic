@@ -5,11 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddPerfilComponent } from './components/add-perfil/add-perfil.component';
+import { SeleccionComponent } from './components/seleccion/seleccion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddPerfilComponent
+    AddPerfilComponent,
   ],
   imports: [
     BrowserModule,
