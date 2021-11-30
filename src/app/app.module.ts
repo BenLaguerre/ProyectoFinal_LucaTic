@@ -13,6 +13,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { SeleccionComponent } from './components/seleccion/seleccion.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LechonesGustadosComponent } from './components/lechones-gustados/lechones-gustados.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FooterComponent } from './components/footer/footer.component';
     AddPerfilComponent,
     SeleccionComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LechonesGustadosComponent
   ],
   imports: [
     BrowserModule,
