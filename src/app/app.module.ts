@@ -16,7 +16,8 @@ import { SeleccionComponent } from './components/seleccion/seleccion.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    AddPerfilComponent
+    AddPerfilComponent,
+    SeleccionComponent
   ],
   imports: [
     BrowserModule,
@@ -26,8 +27,7 @@ import { SeleccionComponent } from './components/seleccion/seleccion.component';
     MaterialModule,
     FormsModule, 
     ReactiveFormsModule,
-    MatNativeDateModule,
-    SeleccionComponent
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
