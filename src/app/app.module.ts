@@ -10,8 +10,8 @@ import { AddPerfilComponent } from './components/add-perfil/add-perfil.component
 import { SeleccionComponent } from './components/seleccion/seleccion.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MaterialModule} from '../material.module';
-import {MatNativeDateModule} from '@angular/material/core';
+import { MaterialModule } from '../material.module';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 
@@ -32,7 +32,8 @@ import {MatNativeDateModule} from '@angular/material/core';
     MaterialModule,
     FormsModule, 
     ReactiveFormsModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    SeleccionComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
