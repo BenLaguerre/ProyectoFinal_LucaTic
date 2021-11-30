@@ -12,6 +12,7 @@ import { MaterialModule } from '../material.module';
 import { MatNativeDateModule } from '@angular/material/core';
 import { SeleccionComponent } from './components/seleccion/seleccion.component';
 import { DetallePerfilComponent } from './components/detalle-perfil/detalle-perfil.component';
+import { Eror404Component } from './components/eror404/eror404.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DetallePerfilComponent } from './components/detalle-perfil/detalle-perf
     HomeComponent,
     AddPerfilComponent,
     SeleccionComponent,
-    DetallePerfilComponent
+    DetallePerfilComponent,
+    Eror404Component
   ],
   imports: [
     BrowserModule,
