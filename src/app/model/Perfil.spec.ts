@@ -14,7 +14,9 @@ describe('nuevo perfil', function () {
           27,
           'madrid',
           'el aliento de mi gato huele a comida de gato',
-          'rock'
+          'rock',
+          ["asdasd3225435"],
+          ["asdfgr56435"]
         )
       ).toBeTruthy();
     });
@@ -29,7 +31,9 @@ describe('nuevo perfil', function () {
       27,
       'madrid',
       'el aliento de mi gato huele a comida de gato',
-      'rock'
+      'rock',
+      ["asdasd3225435"],
+      ["asdfgr56435"]
     );
     expect(perfil).toBeInstanceOf(Perfil);
   });
