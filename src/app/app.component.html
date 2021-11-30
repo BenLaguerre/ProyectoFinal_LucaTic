@@ -1,16 +1,27 @@
-<header>
-<mat-toolbar color="secondary" class="navbar">
-  <div>LechonMatch</div>
-  <div>
-      <span><a routerLink="seleccion">Selección</a></span>
-      <span>Likes</span>
-      <span>Matches</span>
-  </div>
-</mat-toolbar>
-</header>
-<main>
-<router-outlet>
-  <a routerLink="add-perfil">Registrarme</a>
-</router-outlet>
-</main>
-<footer></footer>
+<div class="container">
+  <header>
+    <div>
+      <img src="../assets/images/LechonMatch1.png" alt="lechon logo" title="LechonMatch">
+    </div>
+    <div>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <span><a routerLink="seleccion">Selección</a></span>
+      </button>
+      <button mat-menu-item>
+        <span>Likes</span>
+      </button>
+      <button mat-menu-item>
+        <span>Matches</span>
+      </button>
+    </mat-menu>
+  </header>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+  <footer></footer>
+</div>
