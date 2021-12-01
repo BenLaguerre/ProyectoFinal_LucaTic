@@ -20,7 +20,6 @@ export class CrudService {
   constructor(private httpClient: HttpClient) { }
  
   // Add
-  /*
   addProfile(data: Perfil): Observable<any> {
     let API_URL = `${this.REST_API}/add-perfil`;
     return this.httpClient.post(API_URL, data)
@@ -28,7 +27,6 @@ export class CrudService {
         catchError(this.handleError)
       )
   }
-  */
  
   // Get all objects
   GetAllProfile() {

@@ -84,14 +84,14 @@
       <mat-form-field appearance="outline">
         <mat-label>Género musical:</mat-label>
         <mat-select formControlName="musicGenre">
-          <mat-option value="Electro">Electrónica</mat-option>
+          <mat-option value="Electronica">Electrónica</mat-option>
           <mat-option value="Pop">Pop</mat-option>
           <mat-option value="Metal">Metal</mat-option>
-          <mat-option value="Alternative">Alternativa</mat-option>
+          <mat-option value="Alternativa">Alternativa</mat-option>
           <mat-option value="Indie">Indie</mat-option>
           <mat-option value="Reggeton">Reggeton</mat-option>
           <mat-option value="Synthwave">Synthwave</mat-option>
-          <mat-option value="Classic">Clásica</mat-option>
+          <mat-option value="Clasica">Clásica</mat-option>
         </mat-select>
         <mat-error>por favor seleccione uno de la lista.</mat-error>
       </mat-form-field>
@@ -105,8 +105,11 @@
         }}</mat-error>
       </mat-form-field>
     </div>
-    <button mat-button (click)="addPerfil()" id="btn-registro">
+    <button 
+    mat-button (click)="addPerfil()" id="btn-registro" diabled="true">
       Registrarse
     </button>
+    <br>
+    {{ formRegistro.valid }}
   </div>
 </div>
