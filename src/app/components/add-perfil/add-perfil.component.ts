@@ -74,8 +74,8 @@ export class AddPerfilComponent implements OnInit {
 
   //registro de datos
   addPerfil() {
+    this.formRegistro.value.age = Number(2021-this.formRegistro.value.age.getFullYear());
     console.log(this.formRegistro.value);
-    console.log(2021-this.formRegistro.value.age.getFullYear());
   }
   // Servicio de Registro aquí abajo.
   // esto es un copy pasta del servicio de registro que hicimos
