@@ -1,72 +1,91 @@
 <div class="container">
+  <div [formGroup]="formRegistro">
     <h2>Registrate</h2>
     <div>
-    <mat-form-field appearance="outline">
-      <mat-label>Introduce tu email</mat-label>
-      <input
-        matInput
-        placeholder="sergio@ejemplo.es"
-        [formControl]="email"
-        required
-      />
-      <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
-    </mat-form-field>
-  </div>
-  <div  >
-    <mat-form-field appearance="outline">
-      <mat-label>Introduce contraseña</mat-label>
-      <input 
-      matInput 
-      placeholder="contraseña"
-      [type]="hide ? 'password' : 'text'"
-      [formControl]="password"
-      required />
-      <button
-        mat-icon-button
-        matSuffix
-        (click)="hide = !hide"
-        [attr.aria-label]="'Hide password'"
-        [attr.aria-pressed]="hide"
-      >
-        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-      </button>
-      <mat-error *ngIf="password.invalid">{{ getErrorMessagePass() }}</mat-error>
-    </mat-form-field>
-  </div>
+      <mat-form-field appearance="outline">
+        <mat-label>Introduce tu email</mat-label>
+        <input
+          matInput
+          placeholder="sergio@ejemplo.es"
+          formControlName="email"
+          required
+        />
+        <mat-error *ngIf="formRegistro.get('email')?.invalid">{{
+          getErrorMessage()
+        }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Introduce contraseña</mat-label>
+        <input
+          matInput
+          placeholder="contraseña"
+          [type]="hide ? 'password' : 'text'"
+          formControlName="password"
+          required
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-error *ngIf="formRegistro.get('password')?.invalid">{{
+          getErrorMessagePass()
+        }}</mat-error>
+      </mat-form-field>
+    </div>
     <div>
       <label>Género:</label>
-      <mat-radio-group [formControl]="gender">
+      <mat-radio-group formControlName="gender">
         <mat-radio-button value="male">Hombre</mat-radio-button>
         <mat-radio-button value="female">Mujer</mat-radio-button>
       </mat-radio-group>
     </div>
-    <mat-form-field appearance="outline">
+    <div>
+      <mat-form-field appearance="outline">
         <mat-label>Nombre completo:</mat-label>
-        <input 
-        matInput 
-        placeholder="Ejemplo: Pedro Perez"
-        [formControl]="name">
+        <input
+          matInput
+          placeholder="Ejemplo: Pedro Perez"
+          formControlName="name"
+        />
       </mat-form-field>
+    </div>
+    <div>
       <mat-form-field appearance="outline">
         <mat-label>Ciudad de residencia:</mat-label>
-        <input matInput placeholder="Ejemplo: Madrid">
+        <input matInput placeholder="Ejemplo: Madrid" formControlName="city" />
       </mat-form-field>
+    </div>
+    <div>
       <mat-form-field appearance="outline">
-      <mat-label>Género musical preferido:</mat-label>
-      <mat-select>
-        <mat-option value="1">Electrónica</mat-option>
-        <mat-option value="2">Pop</mat-option>
-        <mat-option value="3">Metal</mat-option>
-        <mat-option value="3">Alternative</mat-option>
-        <mat-option value="4">Indie</mat-option>
-        <mat-option value="5">Reggeton</mat-option>
-        <mat-option value="6">Synthwave</mat-option>
-        <mat-option value="7">Clásica</mat-option>
-      </mat-select>
-    </mat-form-field>
+        <mat-label>Género musical:</mat-label>
+        <mat-select formControlName="musicGenre">
+          <mat-option value="1">Electrónica</mat-option>
+          <mat-option value="2">Pop</mat-option>
+          <mat-option value="3">Metal</mat-option>
+          <mat-option value="3">Alternative</mat-option>
+          <mat-option value="4">Indie</mat-option>
+          <mat-option value="5">Reggeton</mat-option>
+          <mat-option value="6">Synthwave</mat-option>
+          <mat-option value="7">Clásica</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
       <mat-form-field appearance="outline">
         <mat-label>Indica una breve descripción de tí.</mat-label>
-        <textarea matInput></textarea>
+        <textarea matInput formControlName="description"> </textarea>
       </mat-form-field>
-      <button mat-button color="primary">Registrarse</button>
+    </div>
+    <button 
+    mat-button
+    (click)="register()"
+    id="btn-registro">Registrarse</button>
+  </div>
 </div>
