@@ -1,4 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+$primario: #e91e63;
+$prtim-light: #ff6090;
+$prim-lighter: #ffcada;
+$prim-dark: #b0003a;
+$secundario: #5e35b1;
+$sec-light:#9162e4;
+$sec-lighter: #decbff;
+$sec-dark:#280680;
+$text-light: #e9dcff;
+$text-dark: #27000d;
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body{
+    background: linear-gradient(7deg, $sec-lighter, $prim-lighter, $sec-lighter);
+}
+
+header{
+    color: $text-light;
+    padding-top: 5px;
+    box-shadow: 0px 3px 2px rgb(0, 0, 0, 0.2);
+    background-color: $primario;
+}
+
+footer{
+    color: $text-light;
+    box-shadow: 0px -3px 2px rgb(0, 0, 0, 0.2);
+    background-color: $primario;
+    padding-top: 5px;
+}
