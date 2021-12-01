@@ -48,6 +48,18 @@
     </div>
     <div>
       <mat-form-field appearance="outline">
+        <mat-label>Seleccione fecha de nacimiento</mat-label>
+        <input 
+        matInput 
+        [matDatepicker]="picker"
+        formControlName="age">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error>por favor indique una fecha válida.</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
         <mat-label>Nombre completo:</mat-label>
         <input
           matInput

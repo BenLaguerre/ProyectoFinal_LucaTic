@@ -19,6 +19,7 @@ export class AddPerfilComponent implements OnInit {
       Validators.minLength(8),
     ]),
     gender: new FormControl('', [Validators.required]),
+    age: new FormControl('', [Validators.required]),
     name: new FormControl('', [Validators.required]),
     city: new FormControl('', [Validators.required]),
     musicGenre: new FormControl('', [Validators.required]),
@@ -73,9 +74,8 @@ export class AddPerfilComponent implements OnInit {
 
   //registro de datos
   addPerfil() {
-    console.log(
-      this.formRegistro.value
-    );
+    console.log(this.formRegistro.value);
+    console.log(2021-this.formRegistro.value.age.getFullYear());
   }
   // Servicio de Registro aquí abajo.
   // esto es un copy pasta del servicio de registro que hicimos

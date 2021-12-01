@@ -9,7 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AddPerfilComponent } from './components/add-perfil/add-perfil.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material.module';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { SeleccionComponent } from './components/seleccion/seleccion.component';
 import { DetallePerfilComponent } from './components/detalle-perfil/detalle-perfil.component';
 import { Eror404Component } from './components/eror404/eror404.component';
@@ -41,7 +41,7 @@ import { LoginComponent } from './components/login/login.component';
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  providers: [],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
