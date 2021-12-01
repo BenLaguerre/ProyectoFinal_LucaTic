@@ -17,6 +17,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LechonesGustadosComponent } from './components/lechones-gustados/lechones-gustados.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,8 @@ import { LechonesGustadosComponent } from './components/lechones-gustados/lechon
     MaterialModule,
     FormsModule, 
     ReactiveFormsModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
