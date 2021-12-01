@@ -19,6 +19,7 @@ export class AddPerfilComponent implements OnInit {
       Validators.minLength(8),
     ]),
     gender: new FormControl('', [Validators.required]),
+    age: new FormControl('', [Validators.required]),
     name: new FormControl('', [Validators.required]),
     city: new FormControl('', [Validators.required]),
     musicGenre: new FormControl('', [Validators.required]),
@@ -49,15 +50,32 @@ export class AddPerfilComponent implements OnInit {
       : '';
   }
 
+  getErrorMessageName() {
+    if (this.formRegistro.get('name')?.hasError('required')) {
+      return 'nombre requerido';
+    }return ''
+  }
+
+  getErrorMessageCity() {
+    if (this.formRegistro.get('city')?.hasError('required')) {
+      return 'ciudad requerida';
+    }return ''
+  }
+
+  getErrorMessageDescription() {
+    if (this.formRegistro.get('description')?.hasError('required')) {
+      return 'descrición requerida';
+    }return ''
+  }
+
   // otros
   floatLabelControl = new FormControl('auto');
   hide = true;
 
   //registro de datos
-  register() {
-    console.log(
-      this.formRegistro.value
-    );
+  addPerfil() {
+    console.log(this.formRegistro.value);
+    console.log(2021-this.formRegistro.value.age.getFullYear());
   }
   // Servicio de Registro aquí abajo.
   // esto es un copy pasta del servicio de registro que hicimos

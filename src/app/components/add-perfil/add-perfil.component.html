@@ -48,44 +48,65 @@
     </div>
     <div>
       <mat-form-field appearance="outline">
+        <mat-label>Seleccione fecha de nacimiento</mat-label>
+        <input 
+        matInput 
+        [matDatepicker]="picker"
+        formControlName="age">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error>por favor indique una fecha válida.</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
         <mat-label>Nombre completo:</mat-label>
         <input
           matInput
           placeholder="Ejemplo: Pedro Perez"
           formControlName="name"
         />
+        <mat-error *ngIf="formRegistro.get('name')?.invalid">{{
+          getErrorMessageName()
+        }}</mat-error>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field appearance="outline">
         <mat-label>Ciudad de residencia:</mat-label>
         <input matInput placeholder="Ejemplo: Madrid" formControlName="city" />
+        <mat-error *ngIf="formRegistro.get('city')?.invalid">{{
+          getErrorMessageCity()
+        }}</mat-error>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field appearance="outline">
         <mat-label>Género musical:</mat-label>
         <mat-select formControlName="musicGenre">
-          <mat-option value="1">Electrónica</mat-option>
-          <mat-option value="2">Pop</mat-option>
-          <mat-option value="3">Metal</mat-option>
-          <mat-option value="3">Alternative</mat-option>
-          <mat-option value="4">Indie</mat-option>
-          <mat-option value="5">Reggeton</mat-option>
-          <mat-option value="6">Synthwave</mat-option>
-          <mat-option value="7">Clásica</mat-option>
+          <mat-option value="Electro">Electrónica</mat-option>
+          <mat-option value="Pop">Pop</mat-option>
+          <mat-option value="Metal">Metal</mat-option>
+          <mat-option value="Alternative">Alternativa</mat-option>
+          <mat-option value="Indie">Indie</mat-option>
+          <mat-option value="Reggeton">Reggeton</mat-option>
+          <mat-option value="Synthwave">Synthwave</mat-option>
+          <mat-option value="Classic">Clásica</mat-option>
         </mat-select>
+        <mat-error>por favor seleccione uno de la lista.</mat-error>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field appearance="outline">
         <mat-label>Indica una breve descripción de tí.</mat-label>
         <textarea matInput formControlName="description"> </textarea>
+        <mat-error *ngIf="formRegistro.get('description')?.invalid">{{
+          getErrorMessageDescription()
+        }}</mat-error>
       </mat-form-field>
     </div>
-    <button 
-    mat-button
-    (click)="register()"
-    id="btn-registro">Registrarse</button>
+    <button mat-button (click)="addPerfil()" id="btn-registro">
+      Registrarse
+    </button>
   </div>
 </div>
