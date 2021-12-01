@@ -18,6 +18,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LechonesGustadosComponent } from './components/lechones-gustados/lechones-gustados.component';
 import { LoginComponent } from './components/login/login.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,8 @@ import { LoginComponent } from './components/login/login.component';
     MaterialModule,
     FormsModule, 
     ReactiveFormsModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    HttpClientModule
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' }],
   bootstrap: [AppComponent]

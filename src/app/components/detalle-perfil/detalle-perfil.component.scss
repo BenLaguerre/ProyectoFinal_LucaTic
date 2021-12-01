@@ -1,7 +1,15 @@
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
 .detail-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 70vw;
 }
 
 .info-container {
@@ -16,10 +24,14 @@
 }
 
 .img-container {
-  height: 80px;
-  width: 80px;
+  height: 200px;
+  width: 200px;
   // borrar
   border: 1px solid black;
+
+  img {
+    width: 100%;
+  }
 }
 
 .description-container {
