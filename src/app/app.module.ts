@@ -16,6 +16,9 @@ import { Eror404Component } from './components/eror404/eror404.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LechonesGustadosComponent } from './components/lechones-gustados/lechones-gustados.component';
+import { LoginComponent } from './components/login/login.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { LechonesGustadosComponent } from './components/lechones-gustados/lechon
     Eror404Component,
     HeaderComponent,
     FooterComponent,
-    LechonesGustadosComponent
+    LechonesGustadosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,8 @@ import { LechonesGustadosComponent } from './components/lechones-gustados/lechon
     MaterialModule,
     FormsModule, 
     ReactiveFormsModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
