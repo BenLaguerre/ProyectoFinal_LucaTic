@@ -32,7 +32,18 @@ export class CrudService {
   GetAllProfile() {
     return this.httpClient.get(`${this.REST_API}/perfil`);
   }
- 
+
+  //select single profile
+
+ SelectOnProfile(id:any): Observable<any> {
+    let API_URL = `${this.REST_API}/seleccion/${id}`;
+    return this.httpClient.get(API_URL, { headers: this.httpHeaders })
+      .pipe(map((res: any) => {
+          return res || {}
+        }),
+        catchError(this.handleError)
+      )
+  }
 
   // Get single object
   GetOnProfile(id:any): Observable<any> {

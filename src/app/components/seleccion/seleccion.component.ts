@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CrudService } from './../../service/crud.service';
+import { SeleccionService } from 'src/app/service/seleccion.service';
+
 
 @Component({
   selector: 'app-seleccion',
@@ -8,11 +9,16 @@ import { CrudService } from './../../service/crud.service';
 })
 export class SeleccionComponent implements OnInit {
 
-  constructor(private crudService: CrudService) { }
+  email:string;
+
+  constructor(private seleccionService:SeleccionService) {
+    this.email='';
+   }
 
   ngOnInit(): void {
-    this.crudService.GetAllProfile().subscribe(res => {
-      console.log(res)
+    this.seleccionService.getEmail$().subscribe(email => {
+      this.email=email
+      console.log(email);
     });  
   }
 /*
