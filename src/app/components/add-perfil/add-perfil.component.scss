@@ -7,16 +7,24 @@
 
 .container{
     color: $text-dark;
-    margin-top: 5%;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 mat-form-field{
-    width: 15vw !important;
+    width: 380px !important;
+}
+
+@media (max-width: 768px) {
+    mat-form-field{
+        width: 280px !important;
+    }
 }
 
 #btn-registro{ 
     color: $text-light;
-    padding: 0.5em 2em 0.3em;
+    padding: 0.15em 2em 0.05em;
     background-color: $secundario;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
 }

@@ -49,12 +49,30 @@ export class AddPerfilComponent implements OnInit {
       : '';
   }
 
+  getErrorMessageName() {
+    if (this.formRegistro.get('name')?.hasError('required')) {
+      return 'nombre requerido';
+    }return ''
+  }
+
+  getErrorMessageCity() {
+    if (this.formRegistro.get('city')?.hasError('required')) {
+      return 'ciudad requerida';
+    }return ''
+  }
+
+  getErrorMessageDescription() {
+    if (this.formRegistro.get('description')?.hasError('required')) {
+      return 'descrición requerida';
+    }return ''
+  }
+
   // otros
   floatLabelControl = new FormControl('auto');
   hide = true;
 
   //registro de datos
-  register() {
+  addPerfil() {
     console.log(
       this.formRegistro.value
     );
