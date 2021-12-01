@@ -27,9 +27,10 @@ export class AddPerfilComponent implements OnInit {
     ]),
     gender: new FormControl('', [Validators.required]),
     age: new FormControl('', [Validators.required]),
-    name: new FormControl('', [Validators.required]),
+    firstName: new FormControl('', [Validators.required]),
+    lastName: new FormControl('', [Validators.required]),
     city: new FormControl('', [Validators.required]),
-    musicGenre: new FormControl('', [Validators.required]),
+    music: new FormControl('', [Validators.required]),
     description: new FormControl('', [Validators.required]),
   });
 }
@@ -55,12 +56,6 @@ export class AddPerfilComponent implements OnInit {
     return this.formRegistro.get('password')?.hasError('required')
       ? 'contraseña requerida'
       : '';
-  }
-
-  getErrorMessageName() {
-    if (this.formRegistro.get('name')?.hasError('required')) {
-      return 'nombre requerido';
-    }return ''
   }
 
   getErrorMessageCity() {

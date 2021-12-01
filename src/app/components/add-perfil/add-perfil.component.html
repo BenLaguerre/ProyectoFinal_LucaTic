@@ -60,15 +60,24 @@
     </div>
     <div>
       <mat-form-field appearance="outline">
-        <mat-label>Nombre completo:</mat-label>
+        <mat-label>Nombre:</mat-label>
         <input
           matInput
-          placeholder="Ejemplo: Pedro Perez"
-          formControlName="name"
+          placeholder="Ejemplo: Pedro"
+          formControlName="firstName"
         />
-        <mat-error *ngIf="formRegistro.get('name')?.invalid">{{
-          getErrorMessageName()
-        }}</mat-error>
+        <mat-error>Nombre es requerido</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Apellidos:</mat-label>
+        <input
+          matInput
+          placeholder="Ejemplo: Perez Gonzales"
+          formControlName="lastName"
+        />
+        <mat-error>Apellido es requerido</mat-error>
       </mat-form-field>
     </div>
     <div>
@@ -83,7 +92,7 @@
     <div>
       <mat-form-field appearance="outline">
         <mat-label>Género musical:</mat-label>
-        <mat-select formControlName="musicGenre">
+        <mat-select formControlName="music">
           <mat-option value="Electronica">Electrónica</mat-option>
           <mat-option value="Pop">Pop</mat-option>
           <mat-option value="Metal">Metal</mat-option>
@@ -106,10 +115,8 @@
       </mat-form-field>
     </div>
     <button 
-    mat-button (click)="addPerfil()" id="btn-registro" diabled="true">
+    mat-button (click)="addPerfil()" id="btn-registro" [disabled]="!formRegistro.valid">
       Registrarse
     </button>
-    <br>
-    {{ formRegistro.valid }}
   </div>
 </div>
