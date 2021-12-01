@@ -23,15 +23,11 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: HomeComponent
+    component: LoginComponent
   },
   {
     path: '**', 
     component: Eror404Component
-  },
-  {
-    path:'login',
-    component:LoginComponent
   }
 
 ];
