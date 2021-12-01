@@ -16,6 +16,7 @@ import { Eror404Component } from './components/eror404/eror404.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LechonesGustadosComponent } from './components/lechones-gustados/lechones-gustados.component';
+import { LoginComponent } from './components/login/login.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     Eror404Component,
     HeaderComponent,
     FooterComponent,
-    LechonesGustadosComponent
+    LechonesGustadosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

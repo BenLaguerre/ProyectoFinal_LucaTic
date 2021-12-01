@@ -1,9 +1,13 @@
 header{
     display:flex;
     justify-content:space-between;
-    background-color: rgb(236, 147, 162);
+    align-items:center;
 }
 
+img{
+    height: 45px;
+    width: auto;
+}
 
 span a{
     text-decoration: none;
