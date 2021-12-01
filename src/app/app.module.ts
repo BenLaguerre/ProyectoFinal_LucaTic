@@ -37,7 +37,7 @@ import { LechonesGustadosComponent } from './components/lechones-gustados/lechon
     MaterialModule,
     FormsModule, 
     ReactiveFormsModule,
-    MatNativeDateModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

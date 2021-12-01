@@ -1,21 +1,50 @@
-<div>
-  <mat-form-field appearance="fill">
-    <mat-label>Enter your email</mat-label>
-    <input
-      matInput
-      placeholder="pat@example.com"
-      [formControl]="email"
-      required
-    />
-    <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
-  </mat-form-field>
-</div>
-<div class="example-container">
-    <mat-form-field appearance="fill">
-      <mat-label>Enter your password</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'">
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-      </button>
+<div class="container">
+    <h2>Registrate</h2>
+    <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Introduce tu email</mat-label>
+      <input
+        matInput
+        placeholder="sergio@ejemplo.es"
+        [formControl]="email"
+        required
+      />
+      <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
     </mat-form-field>
+  </div>
+  <div  >
+    <mat-form-field appearance="outline">
+      <mat-label>Introduce contraseña</mat-label>
+      <input 
+      matInput 
+      placeholder="contraseña"
+      [type]="hide ? 'password' : 'text'"
+      [formControl]="password"
+      required />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+      <mat-error *ngIf="password.invalid">{{ getErrorMessagePass() }}</mat-error>
+    </mat-form-field>
+  </div>
+    <div>
+      <label>Género:</label>
+      <mat-radio-group [formControl]="gender">
+        <mat-radio-button value="m">Hombre</mat-radio-button>
+        <mat-radio-button value="f">Mujer</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre completo:</mat-label>
+        <input 
+        matInput 
+        placeholder="Pedro Perez"
+        [formControl]="name">
+      </mat-form-field>
 </div>
