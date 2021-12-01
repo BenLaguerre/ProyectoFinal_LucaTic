@@ -106,10 +106,8 @@
       </mat-form-field>
     </div>
     <button 
-    mat-button (click)="addPerfil()" id="btn-registro" diabled="true">
+    mat-button (click)="addPerfil()" id="btn-registro" [disabled]="!formRegistro.valid">
       Registrarse
     </button>
-    <br>
-    {{ formRegistro.valid }}
   </div>
 </div>
