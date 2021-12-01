@@ -1,0 +1,29 @@
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-container {
+  display: flex;
+}
+
+.person-info {
+  margin: 12px;
+  margin-top: 0px;
+  padding: 10px;
+  padding-top: 0px;
+}
+
+.img-container {
+  height: 80px;
+  width: 80px;
+  // borrar
+  border: 1px solid black;
+}
+
+.description-container {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+}
