@@ -1,8 +1,8 @@
 .footer {
+    padding-left: 15px;
     position: absolute;
     bottom: 0;
-    background-color: rgb(236, 147, 162);
-    width: 100%;
+    width: calc(100% - 15px);
 }
 
 .footer p{
