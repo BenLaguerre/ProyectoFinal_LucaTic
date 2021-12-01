@@ -11,6 +11,8 @@ export class AddPerfilComponent implements OnInit {
   ngOnInit(): void { }
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required, Validators.minLength(8)]);
+  gender = new FormControl('', [Validators.required])
+  name = new FormControl('', [Validators.required])
 
   getErrorMessage(){
     if (this.email.hasError('required')) {

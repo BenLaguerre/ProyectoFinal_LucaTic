@@ -34,10 +34,17 @@
     </mat-form-field>
   </div>
     <div>
-      <label>Género: </label>
-      <mat-radio-group [formControl]="floatLabelControl">
-        <mat-radio-button value="hombre">Hombre</mat-radio-button>
-        <mat-radio-button value="mujer">Mujer</mat-radio-button>
+      <label>Género:</label>
+      <mat-radio-group [formControl]="gender">
+        <mat-radio-button value="m">Hombre</mat-radio-button>
+        <mat-radio-button value="f">Mujer</mat-radio-button>
       </mat-radio-group>
     </div>
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre completo:</mat-label>
+        <input 
+        matInput 
+        placeholder="Pedro Perez"
+        [formControl]="name">
+      </mat-form-field>
 </div>
