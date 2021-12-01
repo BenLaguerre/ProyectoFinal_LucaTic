@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, NgZone, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CrudService } from 'src/app/service/crud.service';
 //import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
@@ -8,11 +10,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./add-perfil.component.scss'],
 })
 export class AddPerfilComponent implements OnInit {
+  formRegistro: FormGroup;
   ngOnInit(): void {}
-  constructor() {}
-
+  constructor(
+    public formBuilder: FormBuilder,
+    private router: Router,
+    private ngZone: NgZone,
+    private crudService: CrudService
+  ) {
   // Declaración del formulario
-  formRegistro = new FormGroup({
+  this.formRegistro = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [
       Validators.required,
@@ -25,7 +32,7 @@ export class AddPerfilComponent implements OnInit {
     musicGenre: new FormControl('', [Validators.required]),
     description: new FormControl('', [Validators.required]),
   });
-
+}
   // Validación de formulario
   // variables
 
@@ -76,7 +83,15 @@ export class AddPerfilComponent implements OnInit {
   addPerfil() {
     this.formRegistro.value.age = Number(2021-this.formRegistro.value.age.getFullYear());
     console.log(this.formRegistro.value);
+    this.crudService.addProfile(this.formRegistro.value)
+    .subscribe(() => {
+        console.log('Data added successfully!')
+        // aquí función para mandar a login
+      }, (err) => {
+        console.log(err);
+    });
   }
+}
   // Servicio de Registro aquí abajo.
   // esto es un copy pasta del servicio de registro que hicimos
   // en conjunto entre los cuatro equipos, recomiendo no tocar.
@@ -88,4 +103,4 @@ export class AddPerfilComponent implements OnInit {
       alert(e.message);
     }
   } */
-}
+
