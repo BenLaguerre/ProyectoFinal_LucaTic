@@ -1,30 +1,32 @@
-<mat-card class="detail-container">
+<div class="profile-container">
 
-  <div class="info-container">
-    <!-- imagen de la persona en detalle -->
-    <div class="img-container">
-      <img src="" alt="">
+  <mat-card class="detail-container">
+    <div class="info-container">
+      <!-- imagen de la persona en detalle -->
+      <div class="img-container">
+        <img src="{{details[0].picture.large}}" alt="">
+      </div>
+      <!-- Info -->
+      <div class="person-info">
+        <mat-card-title>Info</mat-card-title>
+        <!-- Nombre -->
+        <p>Nombre: {{details[0].name.first}}</p>
+        <!-- Genero -->
+        <p>Genero: {{details[0].gender}}</p>
+        <!-- Edad -->
+        <p>Edad: {{details[0].dob.age}}</p>
+        <!-- Ciudad  -->
+        <p>Ciudad: {{details[0].location.city}}</p>
+        <!-- Musica -->
+        <p>Musica: Rekeson</p>
+      </div>
     </div>
-    <!-- Info -->
-    <div class="person-info">
-      <mat-card-title>Info</mat-card-title>
-      <!-- Nombre -->
-      <p>Nombre: Rigoberto</p>
-      <!-- Genero -->
-      <p>Genero: Hombre</p>
-      <!-- Edad -->
-      <p>Edad: 69</p>
-      <!-- Ciudad  -->
-      <p>Ciudad: Madriz</p>
-      <!-- Musica -->
-      <p>Musica: Rekeson</p>
+    <div class="description-container">
+      <!-- Descripcion de la bio de la persona-->
+      <mat-card-subtitle>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente odio sint natus rerum ea
+        dignissimos possimus
+        adipisci architecto impedit necessitatibus. Delectus deserunt incidunt laboriosam suscipit cumque similique
+        corporis ad labore?</mat-card-subtitle>
     </div>
-  </div>
-  <div class="description-container">
-    <!-- Descripcion de la bio de la persona-->
-    <mat-card-subtitle>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente odio sint natus rerum ea
-      dignissimos possimus
-      adipisci architecto impedit necessitatibus. Delectus deserunt incidunt laboriosam suscipit cumque similique
-      corporis ad labore?</mat-card-subtitle>
-  </div>
-</mat-card>
+  </mat-card>
+</div>
