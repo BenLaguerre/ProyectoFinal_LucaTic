@@ -16,6 +16,7 @@ import { Eror404Component } from './components/eror404/eror404.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LechonesGustadosComponent } from './components/lechones-gustados/lechones-gustados.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LechonesGustadosComponent } from './components/lechones-gustados/lechon
     Eror404Component,
     HeaderComponent,
     FooterComponent,
-    LechonesGustadosComponent
+    LechonesGustadosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
