@@ -6,7 +6,7 @@ export class Perfil {
   private age: Number;
   private city: String;
   private description: String;
-  private musicGenre: String;
+  private music: String;
   private arrayLikes: string[];
   private arrayDislikes: string[];
 
@@ -18,7 +18,7 @@ export class Perfil {
     age: Number,
     city: String,
     description: String,
-    musicGenre: String,
+    music: String,
     arrayLikes: string[],
     arrayDislikes: string[]
   ) {
@@ -29,7 +29,7 @@ export class Perfil {
     this.age = age;
     this.city = city;
     this.description = description;
-    this.musicGenre = musicGenre;
+    this.music = music;
     this.arrayLikes = arrayLikes;
     this.arrayDislikes = arrayDislikes;
   }
@@ -91,11 +91,11 @@ export class Perfil {
   }
 
   public getMusicGender(): String {
-    return this.musicGenre;
+    return this.music;
   }
 
   public setMusicGender(musicGender: String): void {
-    this.musicGenre = this.musicGenre;
+    this.music = this.music;
   }
 
   public getArrayLikes(): string[] {
