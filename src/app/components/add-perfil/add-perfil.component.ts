@@ -14,8 +14,6 @@ export class AddPerfilComponent implements OnInit {
   ngOnInit(): void {}
   constructor(
     public formBuilder: FormBuilder,
-    private router: Router,
-    private ngZone: NgZone,
     private crudService: CrudService
   ) {
   // Declaración del formulario
@@ -77,6 +75,10 @@ export class AddPerfilComponent implements OnInit {
   //registro de datos
   addPerfil() {
     this.formRegistro.value.age = Number(2021-this.formRegistro.value.age.getFullYear());
+    this.formRegistro.value.name = {
+      firstName: this.formRegistro.value.firstName,
+      lastName: this.formRegistro.value.lastName
+    }
     console.log(this.formRegistro.value);
     this.crudService.addProfile(this.formRegistro.value)
     .subscribe(() => {
