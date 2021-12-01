@@ -36,15 +36,37 @@
     <div>
       <label>Género:</label>
       <mat-radio-group [formControl]="gender">
-        <mat-radio-button value="m">Hombre</mat-radio-button>
-        <mat-radio-button value="f">Mujer</mat-radio-button>
+        <mat-radio-button value="male">Hombre</mat-radio-button>
+        <mat-radio-button value="female">Mujer</mat-radio-button>
       </mat-radio-group>
     </div>
     <mat-form-field appearance="outline">
         <mat-label>Nombre completo:</mat-label>
         <input 
         matInput 
-        placeholder="Pedro Perez"
+        placeholder="Ejemplo: Pedro Perez"
         [formControl]="name">
       </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Ciudad de residencia:</mat-label>
+        <input matInput placeholder="Ejemplo: Madrid">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+      <mat-label>Género musical preferido:</mat-label>
+      <mat-select>
+        <mat-option value="1">Electrónica</mat-option>
+        <mat-option value="2">Pop</mat-option>
+        <mat-option value="3">Metal</mat-option>
+        <mat-option value="3">Alternative</mat-option>
+        <mat-option value="4">Indie</mat-option>
+        <mat-option value="5">Reggeton</mat-option>
+        <mat-option value="6">Synthwave</mat-option>
+        <mat-option value="7">Clásica</mat-option>
+      </mat-select>
+    </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Indica una breve descripción de tí.</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+      <button mat-button color="primary">Registrarse</button>
 </div>
