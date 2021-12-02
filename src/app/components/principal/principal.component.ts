@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalComponent implements OnInit {
 
-  constructor() { }
+  numeroRandom:number=0;
 
+  reproducir() {
+    const audio = new Audio('../../../assets/sound/heartbeat.wav');
+    audio.play();
+  }
+
+  constructor() { }
+  
   ngOnInit(): void {
+    this.crearId();
+    this.reproducir();
+  }
+  
+  crearId():number {
+    this.numeroRandom=Math.floor(Math.random()*10);
+    return this.numeroRandom
   }
 
 }
