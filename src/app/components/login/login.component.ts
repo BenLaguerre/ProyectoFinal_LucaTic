@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import { CrudService } from 'src/app/service/crud.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +11,7 @@ import { CrudService } from 'src/app/service/crud.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public auth:AuthService) { }
+  constructor(public auth:AuthService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -47,6 +48,7 @@ export class LoginComponent implements OnInit {
     try {
       await this.auth.login(user,pass)
       alert("Has Entrado")
+      this.router.navigate(["/principal"])
     } catch (e:any) {
       alert(e.message);
     }
