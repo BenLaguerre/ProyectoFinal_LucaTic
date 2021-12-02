@@ -2,7 +2,7 @@ import { Component, NgZone, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CrudService } from 'src/app/service/crud.service';
-//import { AuthService } from 'src/app/service/auth.service';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-add-perfil',
@@ -13,6 +13,7 @@ export class AddPerfilComponent implements OnInit {
   formRegistro: FormGroup;
   ngOnInit(): void {}
   constructor(
+    public auth:AuthService,
     public formBuilder: FormBuilder,
     private crudService: CrudService
   ) {
@@ -71,6 +72,19 @@ export class AddPerfilComponent implements OnInit {
   // otros
   floatLabelControl = new FormControl('auto');
   hide = true;
+  
+  // Servicio de Registro aquí abajo.
+  // esto es un copy pasta del servicio de registro que hicimos
+  // en conjunto entre los cuatro equipos, recomiendo no tocar.
+
+  async registrar(user: string, pass: string) {
+    try {
+      await this.auth.registrar(user, pass);
+      alert('Te has registrado');
+    } catch (e: any) {
+      alert(e.message);
+    }
+  }
 
   //registro de datos
   addPerfil() {
@@ -80,6 +94,7 @@ export class AddPerfilComponent implements OnInit {
       lastName: this.formRegistro.value.lastName
     }
     console.log(this.formRegistro.value);
+    this.registrar(this.formRegistro.value.email, this.formRegistro.value.password);
     this.crudService.addProfile(this.formRegistro.value)
     .subscribe(() => {
         console.log('Data added successfully!')
@@ -88,16 +103,5 @@ export class AddPerfilComponent implements OnInit {
         console.log(err);
     });
   }
-}
-  // Servicio de Registro aquí abajo.
-  // esto es un copy pasta del servicio de registro que hicimos
-  // en conjunto entre los cuatro equipos, recomiendo no tocar.
-  /* async registrar(user: string, pass: string) {
-    try {
-      await this.auth.registrar(user, pass);
-      alert('Te has registrado');
-    } catch (e: any) {
-      alert(e.message);
-    }
-  } */
 
+}
