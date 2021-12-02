@@ -1,8 +1,21 @@
+@import "../../../styles.scss";
+
 .container-seleccion{
     display: flex;
     flex-direction: row;
 }
 
+#like{
+    position: absolute;
+    right: 45vh;
+    top: 450px;
+}
+#dislike{
+    position: absolute;
+    left: 45vh;
+    top: 450px;
+}
+
 .button-container{
-    margin: auto;
+    margin: 50px;
 }

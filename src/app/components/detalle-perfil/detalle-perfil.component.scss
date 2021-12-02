@@ -1,41 +1,92 @@
+@import "../../../styles.scss";
+
+*{
+  color: $text-dark;
+}
+
 .profile-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: fit-content;
+  margin-top: 100px;
 }
 
 .detail-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 70vw;
 }
 
 .info-container {
+  margin-top: 30px;
   display: flex;
 }
 
 .person-info {
+  text-align: center;
   margin: 12px;
-  margin-top: 0px;
+  margin-top: 40px;
   padding: 10px;
   padding-top: 0px;
+  min-width: 200px;
+    mat-card-title{
+      color: $text-light;
+      text-transform: uppercase;
+      font-size: 1.7rem;
+      font-weight: 400;
+      letter-spacing: -1px;
+      margin-bottom: 40px;
+    }
+    p{
+      color: $text-light;
+      font-size: 1.3rem;
+      font-weight: 200;
+      letter-spacing: -1px;
+      margin-bottom: 15px
+    }
 }
 
 .img-container {
-  height: 200px;
-  width: 200px;
+  margin-top: 50px;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
   // borrar
-  border: 1px solid black;
+  box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.2);
 
   img {
-    width: 100%;
+    width: auto;
+    height: 100%;
+    border-radius: 50%;
   }
 }
 
 .description-container {
-  width: 70%;
+  font-weight: 400;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
+}
+
+mat-card{
+  max-width: min-content;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px;
+  border-radius: 50px;
+  background: linear-gradient(-70deg, $primario, $secundario);
+}
+
+mat-card-subtitle{
+  text-align: center;
+  color: $text-light;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-indent: 10px;
+  line-height: 40px;
 }
