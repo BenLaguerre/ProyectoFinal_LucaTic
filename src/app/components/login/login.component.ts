@@ -1,6 +1,7 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 import { CrudService } from 'src/app/service/crud.service';
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { CrudService } from 'src/app/service/crud.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth:AuthService) { }
 
   ngOnInit(): void {
   }
@@ -39,6 +40,19 @@ export class LoginComponent implements OnInit {
       ? 'contraseña requerida'
       : '';
   }
+  
   hide = true;
-}
 
+  async login(user:string, pass:string){
+    try {
+      await this.auth.login(user,pass)
+      alert("Has Entrado")
+    } catch (e:any) {
+      alert(e.message);
+    }
+    }
+
+    clickLogin(){
+      this.login(this.formLogin.value.email, this.formLogin.value.password);
+    }
+}

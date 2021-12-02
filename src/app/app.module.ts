@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth/';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,6 +22,7 @@ import { LechonesGustadosComponent } from './components/lechones-gustados/lechon
 import { LoginComponent } from './components/login/login.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -31,20 +35,24 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     LechonesGustadosComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
     MatNativeDateModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' }],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

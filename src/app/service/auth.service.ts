@@ -9,7 +9,7 @@ export class AuthService {
   userFirebase: string ="";
   constructor(private auth:AngularFireAuth) {
 
-    auth.authState.subscribe((user)=>{
+    auth.authState.subscribe(user=>{
       this.userFirebase=String(user?.email);
       console.log(this.userFirebase);
     })
