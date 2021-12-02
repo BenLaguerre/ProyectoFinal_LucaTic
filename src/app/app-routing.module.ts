@@ -18,6 +18,10 @@ const routes: Routes = [
     component: SeleccionComponent
   },
   {
+    path: 'home/:id',
+    component: HomeComponent
+  },
+  {
     path: 'detalle-perfil/:id',
     component: DetallePerfilComponent
   },
@@ -29,7 +33,7 @@ const routes: Routes = [
     path: '**', 
     component: Eror404Component
   }
-
+ 
 ];
 
 @NgModule({
