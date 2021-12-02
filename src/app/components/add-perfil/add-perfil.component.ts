@@ -93,7 +93,9 @@ export class AddPerfilComponent implements OnInit {
       firstName: this.formRegistro.value.firstName,
       lastName: this.formRegistro.value.lastName
     }
-    console.log(this.formRegistro.value);
+    this.formRegistro.value.arrayLikes=[];
+    this.formRegistro.value.arrayDislikes=[];
+    console.log(this.formRegistro.value)
     this.registrar(this.formRegistro.value.email, this.formRegistro.value.password);
     this.crudService.addProfile(this.formRegistro.value)
     .subscribe(() => {
@@ -103,5 +105,4 @@ export class AddPerfilComponent implements OnInit {
         console.log(err);
     });
   }
-
 }
