@@ -15,6 +15,7 @@ export class AddPerfilComponent implements OnInit {
   constructor(
     public auth:AuthService,
     public formBuilder: FormBuilder,
+    public router: Router,
     private crudService: CrudService
   ) {
   // Declaración del formulario
@@ -80,9 +81,9 @@ export class AddPerfilComponent implements OnInit {
   async registrar(user: string, pass: string) {
     try {
       await this.auth.registrar(user, pass);
-      alert('Te has registrado');
+      console.log('Te has registrado');
     } catch (e: any) {
-      alert(e.message);
+      console.log(e.message);
     }
   }
 
@@ -104,5 +105,10 @@ export class AddPerfilComponent implements OnInit {
       }, (err) => {
         console.log(err);
     });
+    this.regresoLogin()
+  }
+
+  regresoLogin () {
+    this.router.navigate(['/']);
   }
 }
