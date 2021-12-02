@@ -6,6 +6,7 @@ import { DetallePerfilComponent } from './components/detalle-perfil/detalle-perf
 import { Eror404Component } from './components/eror404/eror404.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { PrincipalComponent } from './components/principal/principal.component';
 import { SeleccionComponent } from './components/seleccion/seleccion.component';
 
 const routes: Routes = [
@@ -30,9 +31,14 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
+    path:'principal',
+    component: PrincipalComponent
+  },
+  {
     path: '**', 
     component: Eror404Component
   }
+  
  
 ];
 
