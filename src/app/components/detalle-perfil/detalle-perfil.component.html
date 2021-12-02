@@ -17,16 +17,14 @@
         <p>Genero: {{detalle[0].gender}}</p>
 
         <!-- Edad -->
-        <!--
-
-          <p>Edad: {{detalle[0].age}}</p>
-        -->
+        
+        <p>Edad: {{detalle[0].age}}</p>
 
         <!-- Ciudad  -->
         <p>Ciudad: {{detalle[0].city}}</p>
 
         <!-- Musica -->
-        <p>Musica: Rekeson</p>
+        <p>Musica: {{detalle[0].music}}</p>
           
       </div>
     </div>
@@ -35,5 +33,7 @@
       <mat-card-subtitle>{{detalle[0].description}}</mat-card-subtitle>
     </div>
   </mat-card>
-  <button (click)="addEmail(detalle[0].email)">addEmail</button>
+  <!--
+    <button (click)="addEmail(detalle[0].email)">addEmail</button>
+  -->
 </div>
