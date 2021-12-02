@@ -23,6 +23,7 @@ import { LoginComponent } from './components/login/login.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { PrincipalComponent } from './components/principal/principal.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { environment } from 'src/environments/environment';
     FooterComponent,
     LechonesGustadosComponent,
     LoginComponent,
+    PrincipalComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
