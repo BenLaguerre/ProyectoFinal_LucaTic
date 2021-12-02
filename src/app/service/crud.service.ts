@@ -55,6 +55,17 @@ export class CrudService {
         catchError(this.handleError)
       )
   }
+
+  // Get current profile
+  GetCurrentProfile(mail:String): Observable<any> {
+    let API_URL = `${this.REST_API}/detalle-perfil/?email=${mail}`;
+    return this.httpClient.get(API_URL, { headers: this.httpHeaders })
+      .pipe(map((res: any) => {
+          return res || {}
+        }),
+        catchError(this.handleError)
+      )
+  }
  
   
   // Update
