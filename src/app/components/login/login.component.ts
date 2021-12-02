@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
   async login(user:string, pass:string){
     try {
       await this.auth.login(user,pass)
-      alert("Has Entrado")
+      // aquí función de mandar a home tras recoger this.formLogin.value.email
     } catch (e:any) {
       alert(e.message);
     }
