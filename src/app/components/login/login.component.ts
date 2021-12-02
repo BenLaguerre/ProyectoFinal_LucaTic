@@ -11,9 +11,10 @@ import { CrudService } from 'src/app/service/crud.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public auth:AuthService, private router:Router) { }
+  constructor(public auth:AuthService, private router:Router, private crudService: CrudService) { }
 
   ngOnInit(): void {
+    
   }
 
   formLogin = new FormGroup({
@@ -56,5 +57,9 @@ export class LoginComponent implements OnInit {
 
     clickLogin(){
       this.login(this.formLogin.value.email, this.formLogin.value.password);
+      this.crudService.GetCurrentProfile(this.formLogin.value.email).subscribe(res => {
+        console.log(res);
+        localStorage.setItem("id", res[0].id);
+      });
     }
 }
