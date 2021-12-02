@@ -1,11 +1,17 @@
-<div class="container-img">
+<div *ngIf="getStatus()==='isOnline'">
+
+  <div class="container-img">
     <img src="../../../assets/images/LechonMatchPrincipal.png" alt="logo lechoncito">
 
 
     <img class="logo-heartbeat" src="../../../assets/images/LechonMatch4.png" alt="lechoncito logo">
-</div>
-<p>Encuentra a tu medio lechón</p>
-<audio controls src='../../../assets/sound/heartbeat.wav' type="audio/mp3" class="hidden" autoplay>
+  </div>
+  <p>Encuentra a tu medio lechón</p>
+  <audio controls src='../../../assets/sound/heartbeat.wav' type="audio/mp3" class="hidden" autoplay>
     Your browser does not support the <code>audio</code> element.
-</audio>
+  </audio>
+</div>
 
+<div *ngIf="getStatus()!=='isOnline'">
+  <button><span><a routerLink="">Inicia Sesion</a></span></button>
+</div>
