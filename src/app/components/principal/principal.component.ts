@@ -9,6 +9,10 @@ export class PrincipalComponent implements OnInit {
 
   numeroRandom:number=0;
 
+  getStatus(){
+    let status = sessionStorage.getItem("status")
+    return status
+    }
   reproducir() {
     const audio = new Audio('../../../assets/sound/heartbeat.wav');
     audio.play();
@@ -20,6 +24,7 @@ export class PrincipalComponent implements OnInit {
     this.crearId();
     this.reproducir();
   }
+
   
   crearId():number {
     this.numeroRandom=Math.floor(Math.random()*10);

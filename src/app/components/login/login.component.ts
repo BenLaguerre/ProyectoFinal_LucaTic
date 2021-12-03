@@ -34,6 +34,18 @@ export class LoginComponent implements OnInit {
       : '';
   }
 
+  setOnline(){
+    sessionStorage.setItem("status", "isOnline")
+  }
+  setOffline(){
+    sessionStorage.setItem("status", "isOffline")
+  }
+  getStatus(){
+    let status = sessionStorage.getItem("status")
+    return status
+    }
+
+
   getErrorMessagePass() {
     if (this.formLogin.get('password')?.dirty) {
       return 'debe tener al menos 8 caracteres';
@@ -48,6 +60,7 @@ export class LoginComponent implements OnInit {
   async login(user:string, pass:string){
     try {
       await this.auth.login(user,pass)
+      this.setOnline()
       alert("Has Entrado")
       this.router.navigate(["/principal"])
     } catch (e:any) {

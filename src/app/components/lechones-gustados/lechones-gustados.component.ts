@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class LechonesGustadosComponent implements OnInit {
 
   constructor() { }
+  //Falta añadir el html y su logica :)
+  getStatus(){
+    let status = sessionStorage.getItem("status")
+    return status
+    }
 
   ngOnInit(): void {
   }

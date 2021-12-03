@@ -64,6 +64,11 @@ export class AddPerfilComponent implements OnInit {
     }return ''
   }
 
+  getStatus(){
+    let status = sessionStorage.getItem("status")
+    return status
+    }
+  
   getErrorMessageDescription() {
     if (this.formRegistro.get('description')?.hasError('required')) {
       return 'descrición requerida';
