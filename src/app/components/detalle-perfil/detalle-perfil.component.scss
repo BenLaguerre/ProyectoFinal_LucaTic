@@ -8,8 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: fit-content;
-  margin-top: 100px;
+  min-height: calc(100vh - 190px);
 }
 
 .detail-container {
@@ -64,13 +63,12 @@
 
 .description-container {
   font-weight: 400;
-  margin-top: 30px;
   display: flex;
   justify-content: center;
 }
 
 mat-card{
-  max-width: min-content;
+  max-width: calc(100vw - 100px);
   height: auto;
   display: flex;
   flex-wrap: wrap;
