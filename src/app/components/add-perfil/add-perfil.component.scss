@@ -3,7 +3,7 @@
 *{
     text-align: center;
     padding: 0.5em;
-    text-indent: 0px;
+    text-indent: 0px !important;
 }
 
 .container{
@@ -16,15 +16,22 @@ mat-form-field, ngx-dropzone{
     width: 380px;
     margin: 0px;
     padding: 0.2em;
-    text-align: center;
 }
 
 ngx-dropzone{
-    margin: 0 auto;
+    margin: 0 auto 2rem;
     background-color: transparent;
     border: 1px solid rgba(0, 0, 0, 0.15);
     height: 200px;
     font-size: 0.9rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+ngx-dropzone-label{
+    margin: 0.8rem !important;
+    width: fit-content;
 }
 
 ngx-dropzone:focus, ngx-dropzone:hover{
