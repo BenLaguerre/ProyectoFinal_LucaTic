@@ -18,6 +18,9 @@ export class HeaderComponent implements OnInit {
     this.numeroRandom=Math.floor(Math.random()*10);
     return this.numeroRandom
   }
+  getName(){
+    return sessionStorage.getItem("name")
+  }
   
 }
 
