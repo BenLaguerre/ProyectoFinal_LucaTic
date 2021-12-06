@@ -1,6 +1,4 @@
 <div *ngIf="getStatus()==='isOnline'">
-
-
   <mat-card class="detail-container">
     <div class="info-container">
       <!-- imagen de la persona en detalle -->
@@ -10,15 +8,15 @@
       <!-- Info -->
       <div class="person-info">
         <mat-card-title>Info</mat-card-title>
-        
+
         <!-- Nombre -->
         <p>Nombre: {{detalle.name.firstName}}</p>
-        
+
         <!-- Genero -->
         <p>Genero: {{detalle.gender}}</p>
 
         <!-- Edad -->
-        
+
         <p>Edad: {{detalle.age}}</p>
 
         <!-- Ciudad  -->
@@ -27,24 +25,17 @@
         <!-- Musica -->
         <p>Musica: {{detalle.music}}</p>
 
-          
-        </div>
-      </div>
-      <div class="description-container">
-        <!-- Descripcion de la bio de la persona-->
-        <mat-card-subtitle>{{detalle[0].description}}</mat-card-subtitle>
-      </div>
 
+      </div>
     </div>
     <div class="description-container">
       <!-- Descripcion de la bio de la persona-->
       <mat-card-subtitle>{{detalle.description}}</mat-card-subtitle>
     </div>
   </mat-card>
-  <!--
-
-  </div>
 </div>
+
+
 <div *ngIf="getStatus()!=='isOnline'">
   <button><span><a routerLink="">Inicia Sesion</a></span></button>
 </div>
