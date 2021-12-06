@@ -71,7 +71,7 @@ export class CrudService {
   // Update
   updateProfile(id:any, data:any): Observable<any> {
     let API_URL = `${this.REST_API}/update-perfil/${id}`;
-    return this.httpClient.put(API_URL, data, { headers: this.httpHeaders })
+    return this.httpClient.put(API_URL, JSON.stringify(data), { headers: this.httpHeaders })
       .pipe(
         catchError(this.handleError)
       )

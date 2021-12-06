@@ -1,31 +1,32 @@
 <div *ngIf="getStatus()==='isOnline'">
 
-  <div class="profile-container">
-    <mat-card class="detail-container">
-      <div class="info-container">
-        <!-- imagen de la persona en detalle -->
-        <div class="img-container">
-          <img src="{{detalle[0].image}}" alt="persona">
-        </div>
-        <!-- Info -->
-        <div class="person-info">
-          <mat-card-title>Info</mat-card-title>
 
-          <!-- Nombre -->
-          <p>Nombre: {{detalle[0].name.firstName}}</p>
+  <mat-card class="detail-container">
+    <div class="info-container">
+      <!-- imagen de la persona en detalle -->
+      <div class="img-container">
+        <img src="{{detalle.image}}" alt="persona">
+      </div>
+      <!-- Info -->
+      <div class="person-info">
+        <mat-card-title>Info</mat-card-title>
+        
+        <!-- Nombre -->
+        <p>Nombre: {{detalle.name.firstName}}</p>
+        
+        <!-- Genero -->
+        <p>Genero: {{detalle.gender}}</p>
 
-          <!-- Genero -->
-          <p>Genero: {{detalle[0].gender}}</p>
+        <!-- Edad -->
+        
+        <p>Edad: {{detalle.age}}</p>
 
-          <!-- Edad -->
+        <!-- Ciudad  -->
+        <p>Ciudad: {{detalle.city}}</p>
 
-          <p>Edad: {{detalle[0].age}}</p>
+        <!-- Musica -->
+        <p>Musica: {{detalle.music}}</p>
 
-          <!-- Ciudad  -->
-          <p>Ciudad: {{detalle[0].city}}</p>
-
-          <!-- Musica -->
-          <p>Musica: {{detalle[0].music}}</p>
           
         </div>
       </div>
@@ -33,10 +34,15 @@
         <!-- Descripcion de la bio de la persona-->
         <mat-card-subtitle>{{detalle[0].description}}</mat-card-subtitle>
       </div>
-    </mat-card>
-    <!--
-    <button (click)="addEmail(detalle[0].email)">addEmail</button>
-  -->
+
+    </div>
+    <div class="description-container">
+      <!-- Descripcion de la bio de la persona-->
+      <mat-card-subtitle>{{detalle.description}}</mat-card-subtitle>
+    </div>
+  </mat-card>
+  <!--
+
   </div>
 </div>
 <div *ngIf="getStatus()!=='isOnline'">
