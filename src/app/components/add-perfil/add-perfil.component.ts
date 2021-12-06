@@ -1,6 +1,12 @@
 import { Component, NgZone, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
+import { UploadService } from 'src/app/service/upload.service';
 import { CrudService } from 'src/app/service/crud.service';
 import { AuthService } from 'src/app/service/auth.service';
 
@@ -8,32 +14,63 @@ import { AuthService } from 'src/app/service/auth.service';
   selector: 'app-add-perfil',
   templateUrl: './add-perfil.component.html',
   styleUrls: ['./add-perfil.component.scss'],
+  providers: [UploadService, CrudService, AuthService]
 })
 export class AddPerfilComponent implements OnInit {
+  files: File[] = [];
   formRegistro: FormGroup;
+  foto:string = '';
   ngOnInit(): void {}
+
+  onSelect(event: { addedFiles: any; }) {
+    console.log(event);
+    this.files.push(...event.addedFiles);
+  }
+
+  onRemove(event: File) {
+    console.log(event);
+    this.files.splice(this.files.indexOf(event), 1);
+  }
+
+  onUpload(){
+    if(!this.files[0]){
+      
+    }
+    const fileData = this.files[0];
+    const data = new FormData();
+    data.append('file', fileData);
+    data.append('upload_preset', 'angular.cloudinary');
+    data.append('cloud_name', 'lechon-match');
+    this._uploadService.uploadImage( data ).subscribe( response => {
+      if (response){
+        this.foto = response.url;
+      }
+    } )
+  }
+
   constructor(
-    public auth:AuthService,
+    public auth: AuthService,
     public formBuilder: FormBuilder,
     public router: Router,
-    private crudService: CrudService
+    private crudService: CrudService, 
+    private _uploadService: UploadService
   ) {
-  // Declaración del formulario
-  this.formRegistro = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(8),
-    ]),
-    gender: new FormControl('', [Validators.required]),
-    age: new FormControl('', [Validators.required]),
-    firstName: new FormControl('', [Validators.required]),
-    lastName: new FormControl('', [Validators.required]),
-    city: new FormControl('', [Validators.required]),
-    music: new FormControl('', [Validators.required]),
-    description: new FormControl('', [Validators.required]),
-  });
-}
+    // Declaración del formulario
+    this.formRegistro = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(8),
+      ]),
+      gender: new FormControl('', [Validators.required]),
+      age: new FormControl('', [Validators.required]),
+      firstName: new FormControl('', [Validators.required]),
+      lastName: new FormControl('', [Validators.required]),
+      city: new FormControl('', [Validators.required]),
+      music: new FormControl('', [Validators.required]),
+      description: new FormControl('', [Validators.required]),
+    });
+  }
   // Validación de formulario
   // variables
 
@@ -61,24 +98,26 @@ export class AddPerfilComponent implements OnInit {
   getErrorMessageCity() {
     if (this.formRegistro.get('city')?.hasError('required')) {
       return 'ciudad requerida';
-    }return ''
+    }
+    return '';
   }
 
-  getStatus(){
-    let status = sessionStorage.getItem("status")
-    return status
-    }
-  
+  getStatus() {
+    let status = sessionStorage.getItem('status');
+    return status;
+  }
+
   getErrorMessageDescription() {
     if (this.formRegistro.get('description')?.hasError('required')) {
       return 'descrición requerida';
-    }return ''
+    }
+    return '';
   }
 
   // otros
   floatLabelControl = new FormControl('auto');
   hide = true;
-  
+
   // Servicio de Registro aquí abajo.
   // esto es un copy pasta del servicio de registro que hicimos
   // en conjunto entre los cuatro equipos, recomiendo no tocar.
@@ -94,26 +133,35 @@ export class AddPerfilComponent implements OnInit {
 
   //registro de datos
   addPerfil() {
-    this.formRegistro.value.age = Number(2021-this.formRegistro.value.age.getFullYear());
+    this.onUpload();
+    this.formRegistro.value.age = Number(
+      2021 - this.formRegistro.value.age.getFullYear()
+    );
     this.formRegistro.value.name = {
       firstName: this.formRegistro.value.firstName,
-      lastName: this.formRegistro.value.lastName
-    }
-    this.formRegistro.value.arrayLikes=[];
-    this.formRegistro.value.arrayDislikes=[];
-    console.log(this.formRegistro.value)
-    this.registrar(this.formRegistro.value.email, this.formRegistro.value.password);
-    this.crudService.addProfile(this.formRegistro.value)
-    .subscribe(() => {
-        console.log('Data added successfully!')
+      lastName: this.formRegistro.value.lastName,
+    };
+    this.formRegistro.value.arrayLikes = [];
+    this.formRegistro.value.arrayDislikes = [];
+    this.formRegistro.value.image = this.foto;
+    console.log(this.formRegistro.value);
+    this.registrar(
+      this.formRegistro.value.email,
+      this.formRegistro.value.password
+    );
+    this.crudService.addProfile(this.formRegistro.value).subscribe(
+      () => {
+        console.log('Data added successfully!');
         // aquí función para mandar a login
-      }, (err) => {
+      },
+      (err) => {
         console.log(err);
-    });
-    this.regresoLogin()
+      }
+    );
+    this.regresoLogin();
   }
 
-  regresoLogin () {
+  regresoLogin() {
     this.router.navigate(['/']);
   }
 }

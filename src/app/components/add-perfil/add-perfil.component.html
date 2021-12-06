@@ -1,28 +1,43 @@
-<div *ngIf="getStatus()!=='isOnline'">
+<div *ngIf="getStatus() !== 'isOnline'">
   <div class="container">
     <div [formGroup]="formRegistro">
       <h2>Registrate</h2>
       <div>
         <mat-form-field appearance="outline">
           <mat-label>Introduce tu email</mat-label>
-          <input matInput placeholder="sergio@ejemplo.es" formControlName="email" required />
+          <input
+            matInput
+            placeholder="sergio@ejemplo.es"
+            formControlName="email"
+            required
+          />
           <mat-error *ngIf="formRegistro.get('email')?.invalid">{{
-          getErrorMessage()
-        }}</mat-error>
+            getErrorMessage()
+          }}</mat-error>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field appearance="outline">
           <mat-label>Introduce contraseña</mat-label>
-          <input matInput placeholder="contraseña" [type]="hide ? 'password' : 'text'" formControlName="password"
-            required />
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide">
+          <input
+            matInput
+            placeholder="contraseña"
+            [type]="hide ? 'password' : 'text'"
+            formControlName="password"
+            required
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
             <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
           </button>
           <mat-error *ngIf="formRegistro.get('password')?.invalid">{{
-          getErrorMessagePass()
-        }}</mat-error>
+            getErrorMessagePass()
+          }}</mat-error>
         </mat-form-field>
       </div>
       <div>
@@ -35,8 +50,11 @@
       <div>
         <mat-form-field appearance="outline">
           <mat-label>Seleccione fecha de nacimiento</mat-label>
-          <input matInput [matDatepicker]="picker" formControlName="age">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <input matInput [matDatepicker]="picker" formControlName="age" />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
           <mat-error>por favor indique una fecha válida.</mat-error>
         </mat-form-field>
@@ -44,24 +62,36 @@
       <div>
         <mat-form-field appearance="outline">
           <mat-label>Nombre:</mat-label>
-          <input matInput placeholder="Ejemplo: Pedro" formControlName="firstName" />
+          <input
+            matInput
+            placeholder="Ejemplo: Pedro"
+            formControlName="firstName"
+          />
           <mat-error>Nombre es requerido</mat-error>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field appearance="outline">
           <mat-label>Apellidos:</mat-label>
-          <input matInput placeholder="Ejemplo: Perez Gonzales" formControlName="lastName" />
+          <input
+            matInput
+            placeholder="Ejemplo: Perez Gonzales"
+            formControlName="lastName"
+          />
           <mat-error>Apellido es requerido</mat-error>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field appearance="outline">
           <mat-label>Ciudad de residencia:</mat-label>
-          <input matInput placeholder="Ejemplo: Madrid" formControlName="city" />
+          <input
+            matInput
+            placeholder="Ejemplo: Madrid"
+            formControlName="city"
+          />
           <mat-error *ngIf="formRegistro.get('city')?.invalid">{{
-          getErrorMessageCity()
-        }}</mat-error>
+            getErrorMessageCity()
+          }}</mat-error>
         </mat-form-field>
       </div>
       <div>
@@ -85,11 +115,31 @@
           <mat-label>Indica una breve descripción de tí.</mat-label>
           <textarea matInput formControlName="description"> </textarea>
           <mat-error *ngIf="formRegistro.get('description')?.invalid">{{
-          getErrorMessageDescription()
-        }}</mat-error>
+            getErrorMessageDescription()
+          }}</mat-error>
         </mat-form-field>
       </div>
-      <button mat-button (click)="addPerfil()" id="btn-registro" [disabled]="!formRegistro.valid">
+      <!-- el dropzone para cargar archivos -->
+      <ngx-dropzone (change)="onSelect($event)">
+        <ngx-dropzone-label
+          >Suelta aquí una foto de perfil. *</ngx-dropzone-label
+        >
+        <ngx-dropzone-image-preview
+          ngProjectAs="ngx-dropzone-preview"
+          *ngFor="let f of files"
+          [file]="f"
+          [removable]="true" 
+          (removed)="onRemove(f)"
+        >
+          <ngx-dropzone-label>({{ f.type }})</ngx-dropzone-label>
+        </ngx-dropzone-image-preview>
+      </ngx-dropzone>
+      <button
+        mat-button
+        (click)="addPerfil()"
+        id="btn-registro"
+        [disabled]="!formRegistro.valid"
+      >
         Registrarse
       </button>
     </div>
