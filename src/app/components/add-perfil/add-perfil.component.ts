@@ -14,15 +14,15 @@ import { AuthService } from 'src/app/service/auth.service';
   selector: 'app-add-perfil',
   templateUrl: './add-perfil.component.html',
   styleUrls: ['./add-perfil.component.scss'],
-  providers: [UploadService, CrudService, AuthService]
+  providers: [UploadService, CrudService, AuthService],
 })
 export class AddPerfilComponent implements OnInit {
   files: File[] = [];
   formRegistro: FormGroup;
-  foto:string = '';
+  foto: any;
   ngOnInit(): void {}
 
-  onSelect(event: { addedFiles: any; }) {
+  onSelect(event: { addedFiles: any }) {
     console.log(event);
     this.files.push(...event.addedFiles);
   }
@@ -32,27 +32,27 @@ export class AddPerfilComponent implements OnInit {
     this.files.splice(this.files.indexOf(event), 1);
   }
 
-  onUpload(){
-    if(!this.files[0]){
-      
+  onUpload() {
+    if (!this.files[0]) {
     }
     const fileData = this.files[0];
     const data = new FormData();
     data.append('file', fileData);
     data.append('upload_preset', 'angular.cloudinary');
     data.append('cloud_name', 'lechon-match');
-    this._uploadService.uploadImage( data ).subscribe( response => {
-      if (response){
-        this.foto = response.url;
+    this._uploadService.uploadImage(data).subscribe((response) => {
+      if (response) {
+        this.foto = String(response.url);
+        console.log(response.url, this.foto);
       }
-    } )
+    });
   }
 
   constructor(
     public auth: AuthService,
     public formBuilder: FormBuilder,
     public router: Router,
-    private crudService: CrudService, 
+    private crudService: CrudService,
     private _uploadService: UploadService
   ) {
     // Declaración del formulario
@@ -143,8 +143,10 @@ export class AddPerfilComponent implements OnInit {
     };
     this.formRegistro.value.arrayLikes = [];
     this.formRegistro.value.arrayDislikes = [];
-    this.formRegistro.value.image = this.foto;
-    console.log(this.formRegistro.value);
+    setTimeout(() => {
+      this.formRegistro.value.image = this.foto;
+      console.log(this.formRegistro.value);
+    }, 500);
     this.registrar(
       this.formRegistro.value.email,
       this.formRegistro.value.password
