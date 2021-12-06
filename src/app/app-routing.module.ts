@@ -15,11 +15,7 @@ const routes: Routes = [
     component: AddPerfilComponent
   },
   {
-    path: 'seleccion/:id',
-    component: SeleccionComponent
-  },
-  {
-    path: 'home/:id',
+    path: 'home',
     component: HomeComponent
   },
   {

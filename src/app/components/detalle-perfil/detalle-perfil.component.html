@@ -4,33 +4,33 @@
     <div class="info-container">
       <!-- imagen de la persona en detalle -->
       <div class="img-container">
-        <img src="{{detalle[0].image}}" alt="persona">
+        <img src="{{detalle.image}}" alt="persona">
       </div>
       <!-- Info -->
       <div class="person-info">
         <mat-card-title>Info</mat-card-title>
         
         <!-- Nombre -->
-        <p>Nombre: {{detalle[0].name.firstName}}</p>
+        <p>Nombre: {{detalle.name.firstName}}</p>
         
         <!-- Genero -->
-        <p>Genero: {{detalle[0].gender}}</p>
+        <p>Genero: {{detalle.gender}}</p>
 
         <!-- Edad -->
         
-        <p>Edad: {{detalle[0].age}}</p>
+        <p>Edad: {{detalle.age}}</p>
 
         <!-- Ciudad  -->
-        <p>Ciudad: {{detalle[0].city}}</p>
+        <p>Ciudad: {{detalle.city}}</p>
 
         <!-- Musica -->
-        <p>Musica: {{detalle[0].music}}</p>
+        <p>Musica: {{detalle.music}}</p>
           
       </div>
     </div>
     <div class="description-container">
       <!-- Descripcion de la bio de la persona-->
-      <mat-card-subtitle>{{detalle[0].description}}</mat-card-subtitle>
+      <mat-card-subtitle>{{detalle.description}}</mat-card-subtitle>
     </div>
   </mat-card>
   <!--

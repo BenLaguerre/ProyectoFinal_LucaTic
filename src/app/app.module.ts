@@ -54,6 +54,8 @@ import { PrincipalComponent } from './components/principal/principal.component';
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
+    DetallePerfilComponent,
+    HomeComponent
   ],
   bootstrap: [AppComponent],
 })
