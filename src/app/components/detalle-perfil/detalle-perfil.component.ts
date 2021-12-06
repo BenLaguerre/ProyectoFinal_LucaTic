@@ -27,6 +27,10 @@ export class DetallePerfilComponent implements OnInit {
   addEmail(email:string){
     return this.seleccionService.addEmail(this.email);
   }
+  getStatus(){
+    let status = sessionStorage.getItem("status")
+    return status
+    }
   
   ngOnInit(): void {
     /*this.par = this.route.params

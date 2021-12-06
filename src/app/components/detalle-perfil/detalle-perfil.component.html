@@ -1,4 +1,5 @@
-<div class="profile-container">
+<div *ngIf="getStatus()==='isOnline'">
+
 
   <mat-card class="detail-container">
     <div class="info-container">
@@ -25,8 +26,15 @@
 
         <!-- Musica -->
         <p>Musica: {{detalle.music}}</p>
+
           
+        </div>
       </div>
+      <div class="description-container">
+        <!-- Descripcion de la bio de la persona-->
+        <mat-card-subtitle>{{detalle[0].description}}</mat-card-subtitle>
+      </div>
+
     </div>
     <div class="description-container">
       <!-- Descripcion de la bio de la persona-->
@@ -34,6 +42,9 @@
     </div>
   </mat-card>
   <!--
-    <button (click)="addEmail(detalle[0].email)">addEmail</button>
-  -->
+
+  </div>
+</div>
+<div *ngIf="getStatus()!=='isOnline'">
+  <button><span><a routerLink="">Inicia Sesion</a></span></button>
 </div>
