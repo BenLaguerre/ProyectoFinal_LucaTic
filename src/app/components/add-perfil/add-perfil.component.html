@@ -120,7 +120,7 @@
         </mat-form-field>
       </div>
       <!-- el dropzone para cargar archivos -->
-      <ngx-dropzone (change)="onSelect($event)">
+      <ngx-dropzone (change)="onSelect($event)" [multiple]="false">
         <ngx-dropzone-label
           >Suelta aquí una foto de perfil. *</ngx-dropzone-label
         >
