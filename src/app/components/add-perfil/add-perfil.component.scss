@@ -12,10 +12,25 @@
     margin-bottom: 50px;
 }
 
-mat-form-field{
-    width: 380px !important;
-    margin: 0px !important;
+mat-form-field, ngx-dropzone{
+    width: 380px;
+    margin: 0px;
     padding: 0.2em;
+    text-align: center;
+}
+
+ngx-dropzone{
+    margin: 0 auto;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    height: 200px;
+    font-size: 0.9rem;
+}
+
+ngx-dropzone:focus, ngx-dropzone:hover{
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    height: 198px;
+    width: 378px;
 }
 
 @media (max-width: 1081px) {
