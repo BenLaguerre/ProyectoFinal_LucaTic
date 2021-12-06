@@ -1,21 +1,24 @@
 <header>
-    <div>
-      <img src="../assets/images/LechonMatch3.png" alt="lechon logo" title="LechonMatch">
-    </div>
-    <div>
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-    </div>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>
-        <span><a routerLink="home">Home</a></span>
-      </button>
-      <button mat-menu-item>
-        <span>Likes</span>
-      </button>
-      <button mat-menu-item>
-        <span>Matches</span>
-      </button>
-    </mat-menu>
-  </header>
+  <div>
+    <img src="../assets/images/LechonMatch3.png" alt="lechon logo" title="LechonMatch">
+  </div>
+  <div *ngIf="getName()!=='null'">
+    <h2>Hola, {{getName()}}</h2>
+  </div>
+  <div>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </div>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <span><a routerLink="home">Home</a></span>
+    </button>
+    <button mat-menu-item>
+      <span>Likes</span>
+    </button>
+    <button mat-menu-item>
+      <span>Matches</span>
+    </button>
+  </mat-menu>
+</header>
