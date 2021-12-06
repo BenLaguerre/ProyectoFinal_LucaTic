@@ -72,7 +72,7 @@ export class LoginComponent implements OnInit {
       this.login(this.formLogin.value.email, this.formLogin.value.password);
       this.crudService.GetCurrentProfile(this.formLogin.value.email).subscribe(res => {
         console.log(res);
-        localStorage.setItem("id", res[0].id);
+        sessionStorage.setItem("id", res[0].id);
       });
     }
 }
