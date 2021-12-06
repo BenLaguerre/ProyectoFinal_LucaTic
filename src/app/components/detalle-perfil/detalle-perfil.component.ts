@@ -14,12 +14,14 @@ import { SeleccionService } from 'src/app/service/seleccion.service';
 export class DetallePerfilComponent implements OnInit {
   
   par: any;
-  detalle: any[] = [];
+  detalle: any;
+  allProfil: any = [];
   email:string='';
+  
 
   constructor(private crudService:CrudService, private route:ActivatedRoute, private seleccionService:SeleccionService) { }
 
-  numeroRandom:number = Math.floor(Math.random()*10);
+  numeroRandom!:number; 
   
 
   addEmail(email:string){
@@ -31,24 +33,28 @@ export class DetallePerfilComponent implements OnInit {
     }
   
   ngOnInit(): void {
-    this.par = this.route.params
+    /*this.par = this.route.params
     this.crudService.GetOnProfile(this.par._value.id).subscribe(res => {
-      this.detalle=res
-      console.log(this.detalle);
+      console.log(res)
+      this.detalle = res
+    });*/
 
-    });
-    console.log("-----",this.par._value.id)
-    setTimeout(()=>{
-      this.email = this.detalle[0].email
-      console.log(this.detalle)
-      this.addEmail(this.email);
-      console.log(this.email)
-    },1000)
+    this.cargarDetaille()
+
     
     
-
   }
-
   
+  cargarDetaille():void {
+    this.crudService.GetAllProfile().subscribe(res => {
+      this.allProfil = res
+      this.detalle = this.allProfil[(Math.floor(Math.random()*this.allProfil.length))]
+     });
+     
+     setTimeout(()=>{
+      this.email = this.detalle.email
+      this.addEmail(this.email);
 
+    },1000)
+  }
 } 
