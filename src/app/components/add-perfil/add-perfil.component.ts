@@ -145,8 +145,8 @@ export class AddPerfilComponent implements OnInit {
     this.formRegistro.value.arrayDislikes = [];
     setTimeout(() => {
       this.formRegistro.value.image = this.foto;
-      console.log(this.formRegistro.value);
     }, 500);
+    console.log(this.formRegistro.value);
     this.registrar(
       this.formRegistro.value.email,
       this.formRegistro.value.password
