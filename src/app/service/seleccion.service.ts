@@ -11,8 +11,6 @@ export class SeleccionService {
   private email$:Subject<string>
   
 
-
-
   constructor() {
     this.email='';
     this.email$=new Subject<string>();

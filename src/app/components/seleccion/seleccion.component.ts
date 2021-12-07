@@ -62,9 +62,16 @@ export class SeleccionComponent implements OnInit {
 }
   fillArrayDislikes(){
     this.userPerfil.arrayDislikes.push(this.email)
+    console.log(this.userPerfil.arrayDislikes)
     this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
       this.router.navigate(['/home']);
     });
+
+    this.crudService.updateProfile(this.userPerfil.getMongoId(), this.userPerfil).subscribe(() => {
+      console.log('Data updated successfully!')
+    }, (err) => {
+      console.log(err);
+  })
   }
 
 /*
