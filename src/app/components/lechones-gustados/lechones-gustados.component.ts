@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CrudService } from 'src/app/service/crud.service';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-lechones-gustados',
@@ -7,14 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LechonesGustadosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private crudService: CrudService, public auth:AuthService) { }
   //Falta añadir el html y su logica :)
   getStatus(){
     let status = sessionStorage.getItem("status")
     return status
-    }
+  }
+  userMail!: string;
+  likes!: any;
+  likesInfo: any[] = [];
 
   ngOnInit(): void {
+    setTimeout(()=>{
+      this.fetchLikes()
+      }, 500)
+      setTimeout(()=>{
+        this.showLiked()
+      }, 800)
   }
 
+  fetchLikes(): any{
+    this.userMail = this.auth.userFirebase
+    this.crudService.GetCurrentProfile(this.userMail).subscribe(res => {
+      res
+      this.likes = res[0].arrayLikes
+     })
+  }
+  showLiked():any{
+    this.likes.forEach( (userInfo: any) => {
+      this.crudService.GetCurrentProfile(userInfo).subscribe(users => {
+        this.likesInfo.push(users)
+      });
+    });
+  }
 }
