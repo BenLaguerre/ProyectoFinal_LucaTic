@@ -1,4 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { DetallePerfilComponent } from './detalle-perfil.component';
 
@@ -8,7 +10,8 @@ describe('DetallePerfilComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DetallePerfilComponent ]
+      declarations: [ DetallePerfilComponent ],
+      imports: [HttpClientTestingModule, RouterTestingModule]
     })
     .compileComponents();
   });
