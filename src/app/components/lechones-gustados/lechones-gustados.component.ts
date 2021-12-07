@@ -18,6 +18,7 @@ export class LechonesGustadosComponent implements OnInit {
   userMail!: string;
   likes!: any;
   likesInfo: any[] = [];
+  Id!:number;
 
   ngOnInit(): void {
     setTimeout(()=>{
@@ -33,7 +34,7 @@ export class LechonesGustadosComponent implements OnInit {
     this.crudService.GetCurrentProfile(this.userMail).subscribe(res => {
       res
       this.likes = res[0].arrayLikes
-     })
+    })
   }
   showLiked():any{
     this.likes.forEach( (userInfo: any) => {
@@ -41,5 +42,10 @@ export class LechonesGustadosComponent implements OnInit {
         this.likesInfo.push(users)
       });
     });
+  }
+  ensenaId(Ide:number){
+    this.Id = Ide;
+    let stringID = Ide.toString();
+    sessionStorage.setItem("ide",stringID);
   }
 }
