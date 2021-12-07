@@ -1,7 +1,7 @@
 <div *ngIf="getStatus() !== 'isOnline'">
   <div class="container">
     <div [formGroup]="formRegistro">
-      <h2>Registrate</h2>
+      <h2>Regístrate</h2>
       <div>
         <mat-form-field appearance="outline">
           <mat-label>Introduce tu email</mat-label>
@@ -71,6 +71,22 @@
         </mat-form-field>
       </div>
       <div>
+        <ngx-dropzone (change)="onSelect($event)" formControlName="image">
+          <ngx-dropzone-label
+            >Suelta aquí una foto de perfil o as click * </ngx-dropzone-label
+          >
+          <ngx-dropzone-image-preview
+            ngProjectAs="ngx-dropzone-preview"
+            *ngFor="let f of files"
+            [file]="f"
+            [removable]="true" 
+            (removed)="onRemove(f)"
+          >
+            <ngx-dropzone-label>({{ f.type }})</ngx-dropzone-label>
+          </ngx-dropzone-image-preview>
+        </ngx-dropzone>
+      </div>
+      <div>
         <mat-form-field appearance="outline">
           <mat-label>Apellidos:</mat-label>
           <input
@@ -112,7 +128,7 @@
       </div>
       <div>
         <mat-form-field appearance="outline">
-          <mat-label>Indica una breve descripción de tí.</mat-label>
+          <mat-label>Indica una breve descripción de tí:</mat-label>
           <textarea matInput formControlName="description"> </textarea>
           <mat-error *ngIf="formRegistro.get('description')?.invalid">{{
             getErrorMessageDescription()
@@ -120,20 +136,6 @@
         </mat-form-field>
       </div>
       <!-- el dropzone para cargar archivos -->
-      <ngx-dropzone (change)="onSelect($event)" [multiple]="false">
-        <ngx-dropzone-label
-          >Suelta aquí una foto de perfil. *</ngx-dropzone-label
-        >
-        <ngx-dropzone-image-preview
-          ngProjectAs="ngx-dropzone-preview"
-          *ngFor="let f of files"
-          [file]="f"
-          [removable]="true" 
-          (removed)="onRemove(f)"
-        >
-          <ngx-dropzone-label>({{ f.type }})</ngx-dropzone-label>
-        </ngx-dropzone-image-preview>
-      </ngx-dropzone>
       <button
         mat-button
         (click)="addPerfil()"
