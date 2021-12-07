@@ -32,13 +32,13 @@ const routes: Routes = [
     component: PrincipalComponent
   },
   {
-    path: '**', 
-    component: Eror404Component
-  },
-  {
     path: 'lechones-gustados', 
     component: LechonesGustadosComponent
   }, 
+  {
+    path: '**', 
+    component: Eror404Component
+  },
 ];
 
 @NgModule({
