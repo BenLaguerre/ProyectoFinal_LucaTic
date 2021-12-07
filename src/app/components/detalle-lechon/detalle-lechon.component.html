@@ -1,0 +1,41 @@
+<div *ngIf="getStatus()==='isOnline'" class="profile-container">
+    <mat-card class="detail-container">
+      <div class="info-container">
+        <!-- imagen de la persona en detalle -->
+        <div class="img-container">
+          <img src="{{detalle[0].image}}" alt="persona">
+        </div>
+        <!-- Info -->
+        <div class="person-info">
+          <mat-card-title>Info</mat-card-title>
+  
+          <!-- Nombre -->
+          <p>Nombre: {{detalle[0].name.firstName}}</p>
+  
+          <!-- Genero -->
+          <p>Genero: {{detalle[0].gender}}</p>
+  
+          <!-- Edad -->
+  
+          <p>Edad: {{detalle[0].age}}</p>
+  
+          <!-- Ciudad  -->
+          <p>Ciudad: {{detalle[0].city}}</p>
+  
+          <!-- Musica -->
+          <p>Musica: {{detalle[0].music}}</p>
+  
+  
+        </div>
+      </div>
+      <div class="description-container">
+        <!-- Descripcion de la bio de la persona-->
+        <mat-card-subtitle>{{detalle[0].description}}</mat-card-subtitle>
+      </div>
+    </mat-card>
+  </div>
+  
+  
+  <div *ngIf="getStatus()!=='isOnline'">
+    <button><span><a routerLink="">Inicia Sesion</a></span></button>
+  </div>
