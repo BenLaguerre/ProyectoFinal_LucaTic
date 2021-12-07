@@ -10,12 +10,15 @@
 -->
 <div class="main-container">
   <h2>hello there</h2>
-  <mat-card *ngFor="let like of likesInfo" class="lechon-container">
+  
+  <mat-card *ngFor="let like of likesInfo" class="lechon-container" >
     <div class="img-container">
+      
       <img mat-card-image src="{{like[0].image}}">
     </div>
-    <mat-card-title>
-      {{like[0].name.firstName}}
+    <mat-card-title >
+      <a routerLink='../detalle-lechon/{{like[0].id}}'>{{like[0].name.firstName}}</a>
+      
     </mat-card-title>
     <mat-card-content>
       <p>
@@ -26,4 +29,5 @@
       </p>
     </mat-card-content>
   </mat-card>
+
 </div>

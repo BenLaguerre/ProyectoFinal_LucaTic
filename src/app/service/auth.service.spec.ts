@@ -9,13 +9,13 @@ import { AuthService } from './auth.service';
 describe('AuthService', () => {
   let service: AuthService;
 
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [HttpClientTestingModule], 
-    providers: [AuthService, RouterTestingModule, AngularFireAuth]
+  beforeEach(async() => TestBed.configureTestingModule({
+    imports: [HttpClientTestingModule, RouterTestingModule],
+    providers: [AuthService, AngularFireAuth]
   }));
 
-  it('should be created', () => {
-    service= TestBed.get(AuthService);
+  it('should be created', async () => {
+    service= await TestBed.get(AuthService);
     expect(service).toBeTruthy();
    });
 

@@ -21,6 +21,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { PrincipalComponent } from './components/principal/principal.component';
+import { DetalleLechonComponent } from './components/detalle-lechon/detalle-lechon.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { PrincipalComponent } from './components/principal/principal.component';
     LechonesGustadosComponent,
     LoginComponent,
     PrincipalComponent,
+    DetalleLechonComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
