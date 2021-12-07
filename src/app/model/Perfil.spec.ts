@@ -7,6 +7,7 @@ describe('nuevo perfil', function () {
     it('crear instancia de Perfil', () => {
       expect(
         new Perfil(
+          "saidu32554uog4gsd7",
           1,
           'maria@gmail.com',
           'maria',
@@ -24,6 +25,7 @@ describe('nuevo perfil', function () {
 
   it('comprobamos que perfil sea instancia de Perfil', function () {
     perfil = new Perfil(
+      "saidu32554uog4gsd7",
       1,
       'maria@gmail.com',
       'maria',
