@@ -33,6 +33,7 @@ mat-card{
   max-width: fit-content;
   display: flex;
   align-items: center;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.6) !important;
 }
 
 mat-card-title {
@@ -45,11 +46,11 @@ mat-card-title {
     color: $text-light;
     font-weight: 350;
     letter-spacing: -2px;
-    text-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.2);
+    text-shadow: 0.05rem 0.05rem 0.1rem rgba(0, 0, 0, 1) !important;
   }
   a:hover{
     color: $prtim-light;
-    text-shadow: 0.5rem 0.5rem 0.6rem rgba(0, 0, 0, 0.2);
+    text-shadow: 0.08rem 0.08rem 0.16rem rgba(0, 0, 0, 1) !important;
   }
 }
 
