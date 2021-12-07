@@ -1,3 +1,5 @@
+@import "../../../styles.scss";
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -21,5 +23,25 @@
   img {
     width: 100%;
     margin: 0px;
+    border-radius: 50%;
+  }
+}
+
+mat-card{
+  border-radius: 2rem;
+  background: linear-gradient(-70deg, $primario, $secundario);
+  max-width: fit-content;
+}
+
+mat-card-title {
+  color: $text-light;
+  width: 200px;
+  margin-left: 50px;
+}
+
+mat-card-content{
+  p{
+    width: 200px;
+    color: $text-light;
   }
 }
