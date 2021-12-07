@@ -134,6 +134,7 @@ export class AddPerfilComponent implements OnInit {
   //registro de datos
   addPerfil() {
     this.onUpload();
+    setTimeout(() => {
     this.formRegistro.value.age = Number(
       2021 - this.formRegistro.value.age.getFullYear()
     );
@@ -143,24 +144,21 @@ export class AddPerfilComponent implements OnInit {
     };
     this.formRegistro.value.arrayLikes = [];
     this.formRegistro.value.arrayDislikes = [];
-    setTimeout(() => {
-      this.formRegistro.value.image = this.foto;
-    }, 500);
-    console.log(this.formRegistro.value);
     this.registrar(
       this.formRegistro.value.email,
       this.formRegistro.value.password
-    );
-    this.crudService.addProfile(this.formRegistro.value).subscribe(
+      );
+      this.formRegistro.value.image = this.foto;
+      this.crudService.addProfile(this.formRegistro.value).subscribe(
       () => {
         console.log('Data added successfully!');
-        // aquí función para mandar a login
       },
       (err) => {
         console.log(err);
       }
-    );
-    this.regresoLogin();
+    )}, 500);;
+    //this.regresoLogin();
+    console.log(this.formRegistro.value);
   }
 
   regresoLogin() {
