@@ -8,3 +8,22 @@
 </mat-list>
 
 -->
+<div class="main-container">
+  <h2>hello there</h2>
+  <mat-card *ngFor="let like of likesInfo" class="lechon-container">
+    <div class="img-container">
+      <img mat-card-image src="{{like[0].image}}">
+    </div>
+    <mat-card-title>
+      {{like[0].name.firstName}}
+    </mat-card-title>
+    <mat-card-content>
+      <p>
+        Ciudad: {{like[0].city}}
+      </p>
+      <p>
+        Edad: {{like[0].age}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
