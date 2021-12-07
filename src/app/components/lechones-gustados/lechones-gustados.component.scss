@@ -1,0 +1,25 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lechon-container {
+  padding: 12px 8px;
+  margin: 15px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.img-container {
+  width: 80px;
+  height: 80px;
+
+  img {
+    width: 100%;
+    margin: 0px;
+  }
+}
