@@ -131,36 +131,37 @@ export class AddPerfilComponent implements OnInit {
     }
   }
 
+  // Final del copy pasta
+
   //registro de datos
   addPerfil() {
     this.onUpload();
     setTimeout(() => {
-    this.formRegistro.value.age = Number(
-      2021 - this.formRegistro.value.age.getFullYear()
-    );
-    this.formRegistro.value.name = {
-      firstName: this.formRegistro.value.firstName,
-      lastName: this.formRegistro.value.lastName,
-    };
-    this.formRegistro.value.arrayLikes = [];
-    this.formRegistro.value.arrayDislikes = [];
-    this.registrar(
-      this.formRegistro.value.email,
-      this.formRegistro.value.password
+      this.formRegistro.value.age = Number(
+        2021 - this.formRegistro.value.age.getFullYear()
+      );
+      this.formRegistro.value.name = {
+        firstName: this.formRegistro.value.firstName,
+        lastName: this.formRegistro.value.lastName,
+      };
+      this.formRegistro.value.arrayLikes = [];
+      this.formRegistro.value.arrayDislikes = [];
+      this.registrar(
+        this.formRegistro.value.email,
+        this.formRegistro.value.password
       );
       this.formRegistro.value.image = this.foto;
       this.crudService.addProfile(this.formRegistro.value).subscribe(
-      () => {
-        console.log('Data added successfully!');
-      },
-      (err) => {
-        console.log(err);
-      }
-    )}, 500);;
-    //this.regresoLogin();
-    console.log(this.formRegistro.value);
+        () => {
+          console.log('Data added successfully!');
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    }, 500);
+    this.regresoLogin();
   }
-
   regresoLogin() {
     this.router.navigate(['/']);
   }
