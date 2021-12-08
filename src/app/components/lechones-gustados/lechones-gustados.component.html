@@ -8,7 +8,7 @@
 </mat-list>
 
 -->
-<div class="main-container">
+<div class="main-container" *ngIf="getStatus()==='isOnline'">
   <h2>hello there</h2>
   
   <mat-card *ngFor="let like of likesInfo" class="lechon-container" >
@@ -30,4 +30,8 @@
     </mat-card-content>
   </mat-card>
 
+</div>
+
+<div *ngIf="getStatus()!=='isOnline'">
+  <button id="offline"><span><a routerLink="">Inicia Sesion</a></span></button>
 </div>
