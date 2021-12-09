@@ -1,5 +1,13 @@
 @import "../../../styles.scss";
 
+a{
+  text-decoration: none;
+  color: $text-light;
+  &:hover{
+    color: $primario;
+  }
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
