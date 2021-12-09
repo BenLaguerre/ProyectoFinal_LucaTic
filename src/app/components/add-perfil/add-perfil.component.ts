@@ -159,7 +159,7 @@ export class AddPerfilComponent implements OnInit {
           console.log(err);
         }
       );
-    }, 500);
+    }, 1000);
     this.regresoLogin();
   }
   regresoLogin() {
