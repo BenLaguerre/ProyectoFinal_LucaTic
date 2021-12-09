@@ -1,9 +1,13 @@
 <header>
   <div>
-    <img src="../assets/images/LechonMatch3.png" alt="lechon logo" title="LechonMatch">
+    <img
+      src="../assets/images/LechonMatch3.png"
+      alt="lechon logo"
+      title="LechonMatch"
+    />
   </div>
-  <div *ngIf="getName()!=='null'">
-    <h2>Hola, {{getName()}}</h2>
+  <div *ngIf="getName()">
+    <h2>Hola, {{ getName() }}</h2>
   </div>
   <div>
     <button mat-icon-button [matMenuTriggerFor]="menu">
