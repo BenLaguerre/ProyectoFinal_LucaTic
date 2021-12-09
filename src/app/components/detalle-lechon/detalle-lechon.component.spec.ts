@@ -1,23 +1,20 @@
-/*
-import { InjectionToken } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoginComponent } from './login.component';
+import { DetalleLechonComponent } from './detalle-lechon.component';
 
-describe('LoginComponent', () => {
-  let component: LoginComponent;
-  let fixture: ComponentFixture<LoginComponent>;
+describe('DetalleLechonComponent', () => {
+  let component: DetalleLechonComponent;
+  let fixture: ComponentFixture<DetalleLechonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ],
-      providers: [InjectionToken]
+      declarations: [ DetalleLechonComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginComponent);
+    fixture = TestBed.createComponent(DetalleLechonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -26,4 +23,3 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-*/

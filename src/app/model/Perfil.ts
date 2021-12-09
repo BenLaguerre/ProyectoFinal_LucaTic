@@ -1,4 +1,5 @@
 export class Perfil {
+  private mongoId: string;
   private id: Number;
   private email: String;
   private name: String;
@@ -6,11 +7,12 @@ export class Perfil {
   private age: Number;
   private city: String;
   private description: String;
-  private musicGenre: String;
-  private arrayLikes: string[];
-  private arrayDislikes: string[];
+  private music: String;
+  public arrayLikes: string[];
+  public arrayDislikes: string[];
 
   constructor(
+    mongoId: string,
     id: number,
     email: String,
     name: String,
@@ -18,10 +20,11 @@ export class Perfil {
     age: Number,
     city: String,
     description: String,
-    musicGenre: String,
+    music: String,
     arrayLikes: string[],
     arrayDislikes: string[]
   ) {
+    this.mongoId = mongoId;
     this.id = id;
     this.email = email;
     this.name = name;
@@ -29,7 +32,7 @@ export class Perfil {
     this.age = age;
     this.city = city;
     this.description = description;
-    this.musicGenre = musicGenre;
+    this.music = music;
     this.arrayLikes = arrayLikes;
     this.arrayDislikes = arrayDislikes;
   }
@@ -38,8 +41,16 @@ export class Perfil {
     return this.id;
   }
 
+  public getMongoId(): String {
+    return this.mongoId;
+  }
+
   public setId(id: number): void {
     this.id = id;
+  }
+
+  public setMongoId(mongoId: string): void {
+    this.mongoId = mongoId;
   }
 
   public getEmail(): String {
@@ -91,11 +102,11 @@ export class Perfil {
   }
 
   public getMusicGender(): String {
-    return this.musicGenre;
+    return this.music;
   }
 
   public setMusicGender(musicGender: String): void {
-    this.musicGenre = this.musicGenre;
+    this.music = this.music;
   }
 
   public getArrayLikes(): string[] {

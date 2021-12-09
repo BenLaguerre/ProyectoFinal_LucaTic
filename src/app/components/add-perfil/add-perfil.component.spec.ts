@@ -1,4 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+/*import { InjectionToken } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { AddPerfilComponent } from './add-perfil.component';
 
@@ -8,7 +10,8 @@ describe('AddPerfilComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddPerfilComponent ]
+      declarations: [ AddPerfilComponent ],
+      providers: [InjectionToken]
     })
     .compileComponents();
   });
@@ -22,4 +25,19 @@ describe('AddPerfilComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
+  //vamos a testear si se llama a la función addPerfil cuando hacemos click en el botón de registro
+  it('should click Send button with async', async(() => {
+    let buttonElement = fixture.debugElement.query(By.css('#btn-registro'));
+      
+    spyOn(component, 'addPerfil');
+    //Trigger click event after spyOn
+    buttonElement.triggerEventHandler('click', null);
+  
+    fixture.whenStable().then(() => {
+      expect(component.addPerfil).toHaveBeenCalled();
+    });
+  })); 
+
 });
+*/

@@ -10,11 +10,14 @@ $sec-dark:#280680;
 $text-light: #e9dcff;
 $text-dark: #27000d;
 
-html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+main { 
+    min-height: calc(100vh - 190px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
 
 body{
     background: linear-gradient(7deg, $sec-lighter, $prim-lighter, $sec-lighter);
@@ -32,4 +35,21 @@ footer{
     box-shadow: 0px -3px 2px rgb(0, 0, 0, 0.2);
     background-color: $primario;
     padding-top: 5px;
+}
+
+button#offline{
+    border-radius: 20px;
+    background-color: $sec-lighter;
+    border: 1px solid $primario;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+    span{
+        a{
+            text-decoration: none;
+            font-size: 3rem;
+            color: $text-dark;
+        }
+        a:hover{
+            color: $primario;
+        }
+    }
 }

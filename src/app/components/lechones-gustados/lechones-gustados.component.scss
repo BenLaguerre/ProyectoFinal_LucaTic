@@ -1,0 +1,72 @@
+@import "../../../styles.scss";
+
+a{
+  text-decoration: none;
+  color: $text-light;
+  &:hover{
+    color: $primario;
+  }
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lechon-container {
+  padding: 12px 8px;
+  margin: 15px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.img-container {
+  width: 80px;
+  height: 80px;
+  margin-left: 20px;
+  img {
+    width: 80px;
+    height: auto;
+    margin: 0px;
+    border-radius: 50%;
+  }
+}
+
+mat-card{
+  min-width: fit-content;
+  border-radius: 2rem;
+  background: linear-gradient(-70deg, $primario, $secundario);
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.6) !important;
+}
+
+mat-card-title {
+  color: $text-light;
+  width: 200px;
+  margin-left: 50px;
+  padding-top: 1rem;
+  a{
+    text-decoration: none;
+    color: $text-light;
+    font-weight: 350;
+    letter-spacing: -2px;
+    text-shadow: 0.05rem 0.05rem 0.1rem rgba(0, 0, 0, 1) !important;
+  }
+  a:hover{
+    color: $prtim-light;
+    text-shadow: 0.08rem 0.08rem 0.16rem rgba(0, 0, 0, 1) !important;
+  }
+}
+
+mat-card-content{
+  p{
+    width: 200px;
+    color: $text-light;
+  }
+}

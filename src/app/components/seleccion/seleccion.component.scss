@@ -1,8 +1,17 @@
+@import "../../../styles.scss";
+
 .container-seleccion{
     display: flex;
     flex-direction: row;
 }
 
-.button-container{
-    margin: auto;
+#like{
+    position: absolute;
+    right: 25vw;
+    top: 50vh;
+}
+#dislike{
+    position: absolute;
+    left: 25vw;
+    top: 50vh;
 }

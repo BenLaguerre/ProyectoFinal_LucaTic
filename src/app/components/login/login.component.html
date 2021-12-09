@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div *ngIf="getStatus()!=='isOnline'">
+  <div class="container">
+    <div [formGroup]="formLogin">
+      <img src="../../../assets/images/LechonMatchPrincipal.png" alt="">
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Introduce tu email</mat-label>
+          <input matInput placeholder="sergio@ejemplo.es" formControlName="email" required />
+          <mat-error *ngIf="formLogin.get('email')?.invalid">{{
+          getErrorMessage()
+        }}</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Introduce contraseña</mat-label>
+          <input matInput placeholder="contraseña" [type]="hide ? 'password' : 'text'" formControlName="password"
+            required />
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+          <mat-error *ngIf="formLogin.get('password')?.invalid">{{
+          getErrorMessagePass()
+        }}</mat-error>
+        </mat-form-field>
+      </div>
+      <button mat-button id="btn-login" (click)="clickLogin()">
+        Iniciar Sesión
+      </button>
+      <br><br>
+      <p>¿no tienes cuenta? Registrate</p>
+      <button mat-button routerLink="add-perfil" id="btn-login">Registrate</button>
+    </div>
+  </div>
+</div>
+<div *ngIf="getStatus()==='isOnline'">
+  <button><span><a routerLink="/home/:id">Inicia Sesion</a></span></button>
+</div>

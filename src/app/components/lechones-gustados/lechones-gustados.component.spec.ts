@@ -1,6 +1,8 @@
+/*
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { LechonesGustadosComponent } from './lechones-gustados.component';
+import { InjectionToken } from '@angular/core';
 
 describe('LechonesGustadosComponent', () => {
   let component: LechonesGustadosComponent;
@@ -8,7 +10,9 @@ describe('LechonesGustadosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LechonesGustadosComponent ]
+      declarations: [ LechonesGustadosComponent ],
+      imports: [HttpClientTestingModule],
+      providers:[InjectionToken]
     })
     .compileComponents();
   });
@@ -23,3 +27,4 @@ describe('LechonesGustadosComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+*/

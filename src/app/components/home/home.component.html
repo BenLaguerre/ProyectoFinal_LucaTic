@@ -1,1 +1,9 @@
+<div *ngIf="getStatus()==='isOnline'">
 
+  <app-detalle-perfil></app-detalle-perfil>
+  <app-seleccion></app-seleccion>
+
+</div>
+<div *ngIf="getStatus()!=='isOnline'">
+  <button id="offline"><span><a routerLink="">Inicia Sesion</a></span></button>
+</div>
