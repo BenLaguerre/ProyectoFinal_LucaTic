@@ -1,37 +1,24 @@
-<!-- Aquí está la lista de perfiles
+<div class="main-container" *ngIf="getStatus() === 'isOnline'">
+  <h2>Tus posibles lechones</h2>
 
-<mat-list ngFor="let perfil of perfiles">
-    <a routerLink="/detalle-perfil/{{perfil.id}}">
-        <mat-list-item>{{perfil.getName()}}</mat-list-item>
-        <mat-divider></mat-divider>
-    </a>
-</mat-list>
-
--->
-<div class="main-container" *ngIf="getStatus()==='isOnline'">
-  <h2>hello there</h2>
-  
-  <mat-card *ngFor="let like of likesInfo" class="lechon-container" >
+  <mat-card *ngFor="let like of likesInfo" class="lechon-container">
     <div class="img-container">
-      
-      <img mat-card-image src="{{like[0].image}}">
+      <img mat-card-image src="{{ like[0].image }}" />
     </div>
-    <mat-card-title >
-      <a routerLink='../detalle-lechon/{{like[0].id}}'>{{like[0].name.firstName}}</a>
-      
+    <mat-card-title>
+      <a routerLink="../detalle-lechon/{{ like[0].id }}">{{
+        like[0].name.firstName
+      }}</a>
     </mat-card-title>
     <mat-card-content>
-      <p>
-        Ciudad: {{like[0].city}}
-      </p>
-      <p>
-        Edad: {{like[0].age}}
-      </p>
+      <p>Ciudad: {{ like[0].city }}</p>
+      <p>Edad: {{ like[0].age }}</p>
     </mat-card-content>
   </mat-card>
-
 </div>
 
-<div *ngIf="getStatus()!=='isOnline'">
-  <button id="offline"><span><a routerLink="">Inicia Sesion</a></span></button>
+<div *ngIf="getStatus() !== 'isOnline'">
+  <button id="offline">
+    <span><a routerLink="">Inicia Sesion</a></span>
+  </button>
 </div>
